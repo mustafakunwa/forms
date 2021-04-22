@@ -9,6 +9,9 @@ export class QuestionBase<T> {
   type: string;
   options: { key: string; value: string }[];
   errorMessage: { key: string; message: string }[];
+  inputType: string;
+  placeholder: string;
+  hint: string;
 
   constructor(
     options: {
@@ -22,6 +25,9 @@ export class QuestionBase<T> {
       type?: string;
       options?: { key: string; value: string }[];
       errorMessage?: { key: string; message: string }[];
+      inputType?: string;
+      placeholder?: string;
+      hint?: string;
     } = {}
   ) {
     this.value = options.value;
@@ -34,5 +40,8 @@ export class QuestionBase<T> {
     this.options = options.options || [];
     this.pattern = options.pattern;
     this.errorMessage = options.errorMessage || [];
+    this.hint = options.hint || '';
+    this.inputType = options.inputType || 'text';
+    this.placeholder = options.placeholder || '';
   }
 }
