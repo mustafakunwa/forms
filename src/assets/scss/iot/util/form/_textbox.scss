@@ -2,6 +2,10 @@
   position: relative;
   margin: 24px 0 12px 0;
 
+  .ng-touched.ng-invalid {
+    border-color: $primary-color1;
+  }
+
   label {
     position: absolute;
     font-size: 16px;

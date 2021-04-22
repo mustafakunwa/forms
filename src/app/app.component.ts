@@ -13,7 +13,7 @@ export class AppComponent {
       label: 'First Name',
       value: 'Mustafa',
       required: true,
-      hint: 'Enter your First Name',
+      placeholder: 'Enter your First Name',
       errorMessage: [{ key: 'required', message: 'FirstName is required' }],
     },
     {

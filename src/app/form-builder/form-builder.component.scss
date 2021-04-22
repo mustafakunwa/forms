@@ -1,0 +1,9 @@
+@import "../../assets/scss/iot/settings";
+
+.form {
+    &__hint {
+    }
+    &__error {
+        color: $primary-color1;
+    }
+}
