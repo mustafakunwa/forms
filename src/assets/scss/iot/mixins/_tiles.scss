@@ -1,0 +1,80 @@
+@mixin gradient-horizontal-two-tiles($first-color,$second-color) {
+    background: -moz-linear-gradient(left,  $first-color 0%, $first-color 50%, $second-color 50%, $second-color 100%);
+    background: -webkit-linear-gradient(left, $first-color 0%, $first-color 50%, $second-color 50%, $second-color 100%);
+    background: linear-gradient(to right,  $first-color 0%, $first-color 50%, $second-color 50%, $second-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$first-color, endColorstr=$second-color,GradientType=1 );
+  }
+  
+  @mixin gradient-vertical-two-tiles($first-color,$second-color) {
+    background: -moz-linear-gradient(top,  $first-color 0%, $first-color 50%, $second-color 50%, $second-color 100%);
+    background: -webkit-linear-gradient(top, $first-color 0%, $first-color 50%, $second-color 50%, $second-color 100%);
+    background: linear-gradient(to bottom,  $first-color 0%, $first-color 50%, $second-color 50%, $second-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$first-color, endColorstr=$second-color,GradientType=1 );
+  }
+  
+  %link-arrow{
+      &:after {
+        font-family: airtel-icons;
+        content: "\F16E";
+        font-size: 130%;
+        vertical-align: sub;
+        margin-left: 15px;
+        display: inline-block;
+      }
+      &:hover{
+        &:after {
+          @include animation(linkanimation 0.7s linear);
+        }
+      }
+    }
+  
+  @mixin tiels($first-color,$second-color){
+    @media #{$small-up} {
+      padding: 50px 0;
+    }
+    @include gradient-vertical-two-tiles($first-color,$second-color);
+    @media #{$small-up} {
+      @include gradient-horizontal-two-tiles($first-color,$second-color);
+    }
+    >div {
+      @include container;
+      @media #{$small-up} {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+     > div >  a{
+        @extend %link-arrow;
+        position: absolute;
+        @media #{$small-up} {
+          bottom: 0;
+        }
+        bottom: 30px;
+      }
+      .graphic{
+        float: right;
+        i{
+          line-height: 1;
+        }
+      }
+      > div{
+        position: relative;
+        @media #{$small-down} {
+          height:280px;
+          overflow:hidden;
+        }
+        &:nth-child(1) {
+          @media #{$small-up} {
+            padding-right:30px;
+          }
+        }
+        &:nth-child(2) {
+          @media #{$small-up} {
+            padding-left:30px;
+            padding-top:0;
+          }
+          padding-top:30px;
+        }
+      }
+    }
+  }
+  

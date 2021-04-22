@@ -1,0 +1,90 @@
+// MUSTAFA
+@import "./animations";
+@import "./borderRadius";
+@import "../settings";
+////
+@mixin btn(
+  $radius: 0,
+  $default: true,
+  $transparent: false,
+  $outlinebtn: false,
+  $disablebtn: false,
+  $size: $btn-default,
+  $bg-color: $light-grey,
+  $color:$white
+) {
+  @include transition(all 0.7s ease);
+  cursor: pointer;
+  font-weight: 400;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: #{($size/100) * 10}px;
+  padding: 8px 16px;
+  /* min-width: #{$size}px; */
+  /* line-height: $size/100; */
+  max-width: 100%;
+  /*  border: solid 1px transparent; */
+  @include border-radius($radius);
+  border-color: transparent;
+
+  @if $default {
+    background: $bg-color;
+    color: $color;
+
+    &:hover,
+    &:active {
+      background: $bg-color;
+      color: $color;
+    }
+  }
+
+  @if $transparent {
+    background: transparent;
+    border-color: none;
+    color: $bg-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $bg-color;
+      color: $color;
+      border-color: $bg-color;
+    }
+  }
+
+  @if $outlinebtn {
+    background: transparent;
+    border-color: $black;
+    color: $black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $bg-color;
+      color: $color;
+      border-color: $bg-color;
+    }
+  }
+
+  @if $disablebtn {
+    background: $bg-color;
+    border-color: none;
+    //color: $primary-darkgrey;
+    cursor: no-drop;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $bg-color;
+      color: $color;
+      border-color: $bg-color;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

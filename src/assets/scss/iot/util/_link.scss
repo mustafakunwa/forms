@@ -1,0 +1,21 @@
+.link{
+    color: $primary-color1;
+    cursor: pointer;
+    &-arrow{
+      &:after {
+        font-family: airtel-icons;
+        content: "\F16E";
+        font-size: 130%;
+        vertical-align: sub;
+        margin-left: 15px;
+        display: inline-block;
+      }
+      &:hover{
+        &:after {
+          @include animation(linkanimation 0.7s linear);
+        }
+      }
+    }
+  }
+
+  

@@ -1,0 +1,134 @@
+@mixin textbadge(
+  $success: true,
+  $primary: false,
+  $warning: false,
+  $error: false,
+  $default: false
+) {
+  position: relative;
+
+  @if $success {
+    color: $validate-success;
+
+    &::before {
+      background: $validate-success;
+    }
+  }
+
+  @if $primary {
+    color: $secondary-color11;
+
+    &::before {
+      background: $functionary-color1;
+    }
+  }
+
+  @if $error {
+    color: $validate-error;
+
+    &::before {
+      background: $validate-error;
+    }
+  }
+
+  @if $warning {
+    color: $validate-warning;
+
+    &::before {
+      background: $validate-warning;
+    }
+  }
+
+  @if $default {
+    color: $grey;
+
+    &::before {
+      background: $mediumgrey;
+    }
+  }
+}
+
+.successtxt {
+  @include textbadge($success: true);
+}
+
+.primarytxt {
+  @include textbadge($primary: true);
+}
+
+.warningtxt {
+  @include textbadge($warning: true);
+}
+
+.errortxt {
+  @include textbadge($error: true);
+}
+
+.defaulttxt {
+  @include textbadge($default: true);
+}
+
+@mixin btnbadge(
+  $transpraent: true,
+  $red: false,
+  $purple: false,
+  $yellow: false
+) {
+  font-size: 10px;
+  line-height: 1;
+  padding: 4px 10px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  width: 40px;
+  height: 18px;
+
+  @if $transpraent {
+    background: $white;
+  }
+
+  @if $red {
+    background: linear-gradient(156.3deg, #ff2861 0%, #e40000 100%);
+  }
+
+  @if $purple {
+    background: linear-gradient(138.58deg, #bc5fff -8.33%, #7c4d9e 67.59%);
+  }
+
+  @if $yellow {
+    background: linear-gradient(156.3deg, #d3d000 0%, #ef8d07 100%);
+  }
+}
+
+.btnbadge-transparent {
+  @include btnbadge($transpraent: true);
+}
+
+.btnbadge-red {
+  @include btnbadge($red: true);
+  color: $white;
+}
+
+.btnbadge-purple {
+  @include btnbadge($purple: true);
+  color: $white;
+}
+
+.btnbadge-yellow {
+  @include btnbadge($yellow: true);
+  color: $white;
+}
+
+@mixin badges($new: true) {
+  font-size: 12px;
+  position: relative;
+  padding: var(--spacing-xxs) var(--spacing-s);
+  border-radius: 4px;
+
+  @if $new {
+    color: $white;
+    background: $secondary-color1;
+  }
+}
+.newbadge {
+  @include badges($new: true);
+}

@@ -1,0 +1,95 @@
+$gridcolumns: 12;
+$gridgutter: 16px;
+
+@mixin container($width) {
+  max-width: $width;
+  margin: 0 auto;
+
+  padding-left: $gridgutter + 8px;
+  padding-right: $gridgutter + 8px;
+  @media #{$small-up} {
+    padding-left: ($gridgutter * 2);
+    padding-right: ($gridgutter * 2);
+  }
+  @media #{$medium-up} {
+    padding-left: ($gridgutter + 8px);
+    padding-right: ($gridgutter + 8px);
+  }
+}
+.container {
+  @include container(1280px);
+  @media #{$large-down} {
+    @include container(100%);
+  }
+}
+
+// Grid common Column
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gridgutter/2;
+  margin-right: -$gridgutter/2;
+  @media #{$small-up} {
+    margin-left: -($gridgutter) + 4px;
+    margin-right: -($gridgutter) + 4px;
+  }
+  @media #{$medium-up} {
+    margin-left: -($gridgutter);
+    margin-right: -($gridgutter);
+  }
+}
+[class*="flg-"] {
+  padding-left: $gridgutter/2;
+  padding-right: $gridgutter/2;
+
+  @media #{$small-up} {
+    padding-left: ($gridgutter - 4px);
+    padding-right: ($gridgutter - 4px);
+  }
+  @media #{$medium-up} {
+    padding-left: ($gridgutter);
+    padding-right: ($gridgutter);
+  }
+}
+.flg-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+// Grid For mobile
+@media #{$xxsmall-up} {
+  @for $i from 1 through $gridcolumns {
+    .flg-sm-#{$i} {
+      max-width: 100% / $gridcolumns * $i;
+      flex: 0 0 100% / $gridcolumns * $i;
+    }
+  }
+}
+// Grid For ipad and desktop
+@media #{$small-up} {
+  @for $i from 1 through $gridcolumns {
+    .flg-md-#{$i} {
+      max-width: 100% / $gridcolumns * $i;
+      flex: 0 0 100% / $gridcolumns * $i;
+    }
+  }
+}
+// Grid For laptop and desktop
+@media #{$medium-up} {
+  @for $i from 1 through $gridcolumns {
+    .flg-lg-#{$i} {
+      max-width: 100% / $gridcolumns * $i;
+      flex: 0 0 100% / $gridcolumns * $i;
+    }
+  }
+}
+// Grid For desktop and large desktop
+@media #{$large-up} {
+  @for $i from 1 through $gridcolumns {
+    .flg-xl-#{$i} {
+      max-width: 100% / $gridcolumns * $i;
+      flex: 0 0 100% / $gridcolumns * $i;
+    }
+  }
+}

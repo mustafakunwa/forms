@@ -1,0 +1,173 @@
+// chips
+@mixin chips($bod-color, $color, $outline: true, $filled: false, $dark: false) {
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 8px 12px;
+    color: $color;
+    text-align: center;
+    cursor: pointer;
+    min-width: 50px;
+    display: inline-block;
+  
+    @if $outline {
+      background: transparent;
+      border: 1px solid $bod-color;
+    }
+  
+    @if $filled {
+      background: $lightgrey;
+      border: 1px solid $lightgrey;
+    }
+  
+    @if $dark {
+      background: $black;
+      border: 1px solid $black;
+      min-width: 39px;
+    }
+  
+    i {
+      padding: 0 0 0 10px;
+  
+      &::after {
+        content: "";
+        @include arrow($color, 2, 3, down);
+      }
+    }
+  }
+  
+  .outlinechips {
+    @include chips($lightgrey, $lightgrey, $outline: true);
+  }
+  
+  .filledchips {
+    @include chips($lightgrey, $lightgrey, $filled: true);
+  }
+  
+  .darkchips {
+    @include chips($lightgrey, $lightgrey, $dark: true);
+  }
+  
+  // toast
+  @mixin toast($toasttype) {
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 4px;
+    min-width: 270px;
+    padding: 16px 26px 16px 16px;
+    position: relative;
+  
+    .close {
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      top: 16px;
+  
+      &::after,
+      &::before {
+        position: absolute;
+        content: " ";
+        height: 10px;
+        width: 1px;
+        background-color: $grey;
+        right: 16px;
+        top: 4px;
+      }
+  
+      &:before {
+        transform: rotate(45deg);
+      }
+  
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  
+    .icon {
+      padding: 0 10px 0 0;
+    }
+  
+    .success-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 10px 0 12px;
+    }
+  
+    p {
+      padding: 0 0 16px;
+      margin: 0 0 16px;
+  
+      &.last-child {
+        border: none;
+        margin: 0;
+        padding: 0 0 8px;
+      }
+    }
+  
+    @if $toasttype==warning {
+      border: 1px solid $validate-warning;
+      background: $toast-warningbg;
+      color: $validate-warning;
+  
+      .warning-icon {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+      }
+    } @else if $toasttype==success {
+      border: 1px solid $secondary-color8;
+      background: $toast-successbg;
+      color: $secondary-color8;
+  
+      p {
+        border-bottom: 1px solid rgba($color: $secondary-color8, $alpha: 0.2);
+      }
+    } @else if $toasttype==error {
+      border: 1px solid $primary-color2;
+      background: $toast-errorbg;
+      color: $primary-color2;
+    } @else if $toasttype==default {
+      border: 1px solid $grey;
+      background: $toast-defaultbg;
+      color: $grey;
+    } @else if $toasttype==primary {
+      border: 1px solid $secondary-color2;
+      background: $toast-primarybg;
+      color: $secondary-color2;
+    } @else if $toasttype==primarydark {
+      border: 1px solid $grey;
+      background: $grey;
+      color: $white;
+  
+      .close {
+        &::after,
+        &::before {
+          background-color: $white;
+        }
+      }
+    }
+  }
+  
+  .warning-toast {
+    @include toast(warning);
+  }
+  
+  .success-toast {
+    @include toast(success);
+  }
+  
+  .error-toast {
+    @include toast(error);
+  }
+  
+  .default-toast {
+    @include toast(default);
+  }
+  
+  .primary-toast {
+    @include toast(primary);
+  }
+  
+  .primarydark-toast {
+    @include toast(primarydark);
+  }
+  

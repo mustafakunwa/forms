@@ -1,0 +1,14 @@
+.section-box {
+    border-radius: 12px;
+    box-shadow: $shadow600;
+    background-color: $white;
+    animation: fadeIn ease 1s;
+    @media #{$medium-down} {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+    &.mb {
+      margin-bottom: 40px;
+    }
+  }
+  

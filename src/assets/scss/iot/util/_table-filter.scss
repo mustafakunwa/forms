@@ -1,0 +1,203 @@
+.filersection {
+    .filteroptions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 16px;
+  
+      .filtericon {
+        cursor: pointer;
+        width: 48px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: $bggrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.active {
+          background-color: $black;
+        }
+      }
+    }
+  
+    .filterfixed {
+      margin: 0 0 var(--spacing-xl);
+      width: 100%;
+      display: none;
+      &.active {
+        display: block;
+      }
+      @media #{$small-down} {
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        left: 0;
+      }
+      .filterblock {
+        background: $bggrey;
+  
+        .filterdetails {
+          padding: var(--spacing-l) 0;
+          @media #{$small-down} {
+            background: $white;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            flex-direction: row;
+            padding: 0;
+          }
+          .filterhead {
+            display: none;
+            @media #{$small-down} {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              background: #2e3135;
+              width: 100%;
+              padding: var(--spacing-l);
+              color: $white;
+              font-size: $h5-font-size;
+            }
+          }
+          .optiondetails {
+            display: flex;
+            flex-direction: column;
+            @media #{$small-down} {
+              flex-direction: row;
+              height: 100%;
+            }
+  
+            .optionsection {
+              padding: 0 0 0 var(--spacing-xl);
+              display: none;
+              @media #{$small-down} {
+                display: flex;
+                width: 50%;
+                padding: var(--spacing-xl) 0 0 0;
+              }
+              ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                @media #{$small-down} {
+                  flex-direction: column;
+                  width: 100%;
+                  padding: 0 0 84px;
+                }
+                li {
+                  display: inline-block;
+                  @media #{$small-down} {
+                    padding: var(--spacing-l);
+                  }
+                  &:last-child {
+                    margin: 0 0 0 var(--spacing-xxl);
+                    @media #{$small-down} {
+                      margin: 0;
+                    }
+                  }
+                  &.active {
+                    @media #{$small-down} {
+                      background: $lightgrey;
+                      color: $primary-color1;
+                      font-weight: bold;
+                    }
+                  }
+                }
+              }
+            }
+            .options {
+              display: flex;
+              padding-left: 12px;
+              @media #{$small-down} {
+                flex-direction: column;
+                background: $lightgrey;
+                width: 100%;
+              }
+              .section-heading {
+                font-size: 12px;
+                @media #{$small-down} {
+                  display: none;
+                }
+              }
+            }
+            @media #{$small-down} {
+              .option-item {
+                display: none;
+                &.active {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .btnactions {
+      position: absolute;
+      bottom: 0;
+      display: none;
+      padding: 12px;
+      right: 0;
+      @media #{$small-down} {
+        display: block;
+      }
+      .transparentbtn {
+        margin: 0 var(--spacing-m) 0 0;
+      }
+    }
+  
+    .b2b-lib-selectWrapper {
+      margin-bottom: 0;
+    }
+  
+    .filterlist {
+      @media #{$small-down} {
+        display: none;
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        @media #{$small-down} {
+          flex-direction: column;
+          padding: 0 0 84px;
+        }
+        li {
+          display: inline-block;
+          background: $lightgrey;
+          padding: var(--spacing-s) var(--spacing-m);
+          border-radius: 19px;
+          margin: var(--spacing-s);
+          position: relative;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          margin-left: 0;
+          @media #{$small-down} {
+            background: transparent;
+          }
+          &.active,
+          &:hover {
+            background-color: $black;
+            color: $white;
+            @media #{$small-down} {
+              background-color: transparent;
+              color: $primary-color1;
+            }
+          }
+          &::before {
+            display: none;
+          }
+        }
+      }
+      &.active {
+        @media #{$small-down} {
+          display: block;
+        }
+      }
+    }
+  }
+  

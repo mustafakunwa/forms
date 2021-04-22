@@ -1,0 +1,10 @@
+// grid
+@mixin grid($cols, $gutter) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    grid-gap: $gutter;
+  }
+
+@mixin grid-column($col) {
+  grid-columns: $col;
+}  

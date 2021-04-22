@@ -1,0 +1,174 @@
+$nunito: "Nunito", sans-serif;
+
+// MUSTAFA remove ::ng-deep
+
+:root {
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --space-m-10: 10px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+  --spacing-xxl-2: 40px;
+  --spacing-xxl-3: 48px;
+  --spacing-xxl-4: 56px;
+  --spacing-xxl-5: 64px;
+  --spacing-xxl-6: 80px;
+}
+
+// Global variables
+$body-font-size: 12px !default;
+$body-line-height: 1.25 !default;
+$global-font-weight: 400 !default;
+
+// headings
+$h1-font-size: 40px;
+$h2-font-size: 36px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 16px;
+$h6-font-size: 14px;
+$webbody: 14px;
+$headingreg: 12px;
+$normalreg: 10px;
+
+// Color scheme palette
+
+// Netural Colors
+$white: #ffffff;
+$black: #0c0f12;
+$deepgrey: #54575a;
+$grey: #c1c4c7;
+$mediumgrey: #d3d3d4;
+$lightgrey: #efeff0;
+$bggrey: #fafafa;
+$charcol: #242b30;
+$neutralgrey: #9E9FA0;
+
+// Primary Color
+$primary-color1: #cc000a;
+$primary-color2: #930000; //Don't use. This will remove after sometime
+
+// Seconday Color
+$secondary-color1: #495867;
+$secondary-color2: #545d7b;
+$secondary-color3: #5b5f97;
+$secondary-color4: #58839d;
+$secondary-color5: #847996;
+$secondary-color6: #ef8d07;
+$secondary-color7: #c9a1a7;
+$secondary-color8: #dbcbb9;
+$secondary-color9: #ceaf9e;
+$secondary-color11: #cf9044;
+$secondary-color10: #9f544d;
+$secondary-color11: #4f5a45;
+$secondary-color12: #7dc1b7;
+
+//Functionary Color
+$functionary-color1: #027bfc;
+$functionary-color2: #e8f0fe;
+
+//Functionary Validations Color
+$validate-error: #ed4f42;
+$validate-success: #16b27e;
+$validate-warning: #ef8d07;
+$validate-disable: #d3d3d4;
+
+//Toast Color
+$toast-warningbg: #fdf3e0;
+$toast-successbg: #e7f6e6;
+$toast-errorbg: #ffeaec;
+$toast-defaultbg: #fafafa;
+$toast-primarybg: #fafafa;
+
+//Typo
+$b100: #303536;
+$b200: #555a5a;
+$b300: #8c908f;
+$b400: #9ea2a0;
+$b500: #b0b4b2;
+$b600: #c3c5c4;
+$b700: #d5d7d6;
+$b800: #e8e9e8;
+
+//BrandHighlight
+$R100: #dc1b20;
+$R200: #e93639;
+$R300: #f35152;
+$R400: #fc6c6d;
+$R500: #ff8788;
+$R600: #ffa2a4;
+$R700: #ffbcbf;
+$R800: #ffd7da;
+$R900: #fff2f3;
+
+//Shadow
+$shadow100: 0px 0px 4px -1px rgba(24, 39, 75, 0.12),
+  0px 0px 4px -2px rgba(24, 39, 75, 0.08);
+$shadow200: 0px 2px 6px -2px rgba(24, 39, 75, 0.12),
+  0px 4px 8px -4px rgba(24, 39, 75, 0.08);
+$shadow300: 0px 4px 8px -6px rgba(24, 39, 75, 0.12),
+  0px 6px 16px -4px rgba(24, 39, 75, 0.08);
+$shadow400: 0px 4px 12px -6px rgba(12, 15, 18, 0.08),
+  0px 6px 24px -4px rgba(12, 15, 18, 0.08);
+$shadow500: 0px 4px 12px -4px rgba(24, 39, 75, 0.12),
+  0px 8px 32px -6px rgba(24, 39, 75, 0.1);
+$shadow600: 0px 4px 18px -6px rgba(24, 39, 75, 0.12),
+  0px 8px 42px -4px rgba(24, 39, 75, 0.12);
+$shadow700: 0px 8px 22px -6px rgba(24, 39, 75, 0.12),
+  0px 14px 64px -4px rgba(24, 39, 75, 0.12);
+$shadow800: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+  0px 18px 88px -12px rgba(24, 39, 75, 0.14);
+
+// grid variables
+$grid-columns: 12;
+
+// breakpoints
+$xxsmall: 0;
+
+// 0
+$xsmall: 640px;
+
+// 40em
+$small: 768px;
+
+// 48em
+$medium: 1024px;
+
+// 64em
+$large: 1200px;
+
+// 75em
+$xlarge: 1500px;
+
+// 93.750em
+$xxlarge: 1760px;
+
+// 110em
+
+// Media
+$xxsmall-up: "only screen and (min-width:#{$xxsmall})";
+$xsmall-up: "only screen and (min-width:#{$xsmall})";
+$small-up: "only screen and (min-width:#{$small})";
+$medium-up: "only screen and (min-width:#{$medium})";
+$large-up: "only screen and (min-width:#{$large})";
+$xlarge-up: "only screen and (min-width:#{$xlarge})";
+$xxlarge-up: "only screen and (min-width:#{$xxlarge})";
+
+$xsmall-down: "only screen and (max-width:#{$xsmall - 1})";
+$small-down: "only screen and (max-width:#{$small - 1})";
+$medium-down: "only screen and (max-width:#{$medium - 1})";
+$large-down: "only screen and (max-width:#{$large - 1})";
+$xlarge-down: "only screen and (max-width:#{$xlarge - 1})";
+$xxlarge-down: "only screen and (max-width:#{$xxlarge - 1})";
+
+$mobile: "only screen and (min-width:#{$xxsmall}) and (max-width:#{$xsmall})";
+$tab-down: "only screen and (min-width:#{$xsmall}) and (max-width:#{$small - 1})";
+$tab: "only screen and (min-width:#{$xsmall}) and (max-width:#{$small})";
+$iPad-down: "only screen and (min-width:#{$small}) and (max-width:#{$medium - 1})";
+$iPad: "only screen and (min-width:#{$small}) and (max-width:#{$medium})";
+$laptop: "only screen and (min-width:#{$medium}) and (max-width:#{$large})";
+$laptop-down: "only screen and (min-width:#{$medium}) and (max-width:#{$large - 1})";
+$desktop: "only screen and (min-width:#{$large}) and (max-width:#{$xlarge})";

@@ -1,0 +1,81 @@
+//gutter
+$gutter: 24px;
+$grid-columns: 12;
+
+//container
+@mixin container($width) {
+  max-width: $width;
+  margin: 0 auto;
+
+  &-full {
+    max-width: 100%;
+  }
+}
+
+.container {
+  @include container(1104px);
+  padding: 0 12px;
+  @media #{$medium-down} {
+    @include container(100%);
+    padding: 0 8px;
+  }
+  @media #{$small-down} {
+    padding: 0 6px;
+  }
+}
+
+// Grid common Column
+.flexgrid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.row {
+  margin-left: -$gutter/2;
+  margin-right: -$gutter/2;
+
+  @media #{$medium-down} {
+    $gutter: 16px;
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  }
+
+  @media #{$small-down} {
+    $gutter: 12px;
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  }
+}
+
+@for $i from 1 through 12 {
+  .fla-lg-#{$i} {
+    $width: 100% / $grid-columns * $i;
+    width: calc(#{$width});
+    padding: 0 #{$gutter / 2};
+  }
+}
+
+@media #{$medium-down} {
+  $gutter: 16px;
+
+  @for $i from 1 through 12 {
+    .fla-md-#{$i} {
+      $width: 100% / $grid-columns * $i;
+      width: calc(#{$width});
+      padding: 0 #{$gutter / 2};
+    }
+  }
+}
+
+@media #{$small-down} {
+  $gutter: 12px;
+
+  @for $i from 1 through 12 {
+    .fla-sm-#{$i} {
+      $width: 100% / $grid-columns * $i;
+      width: calc(#{$width});
+      padding: 0 #{$gutter / 2};
+    }
+  }
+}
+

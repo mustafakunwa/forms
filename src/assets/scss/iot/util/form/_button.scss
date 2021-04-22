@@ -1,0 +1,174 @@
+@mixin btn(
+  $default: true,
+  $transparent: false,
+  $lefticon: false,
+  $righticon: false,
+  $txtbtn: false,
+  $outlinebtn: false,
+  $bg-color: $primary-color1,
+  $color: $white
+) {
+  border-radius: 4px;
+  color: $color;
+  padding: var(--spacing-s) var(--spacing-l);
+  transition: all 0.7s ease;
+  cursor: pointer;
+  font-weight: 100;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  border: solid 1px transparent;
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  position: relative;
+
+  @if $default {
+    background: $bg-color;
+    color: $color;
+
+    &:hover,
+    &:active {
+      box-shadow: $shadow500;
+      background: $R100;
+    }
+    &:active {
+      background: $R200;
+    }
+  }
+
+  @if $transparent {
+    background: transparent;
+    color: $primary-color1;
+    padding: var(--spacing-s) var(--spacing-s);
+
+    &:hover,
+    &:active {
+      box-shadow: none;
+      background: none;
+    }
+  }
+
+  @if $lefticon {
+    display: flex;
+    background: $lightgrey;
+    color: $grey;
+    padding: var(--spacing-s)
+      var(--spacing-l)
+      var(--spacing-s)
+      var(--spacing-m);
+
+    i {
+      font-size: 16px;
+      padding: 0 var(--spacing-s) 0 0;
+    }
+  }
+
+  @if $righticon {
+    display: flex;
+    background: $lightgrey;
+    color: $grey;
+    padding: var(--spacing-s)
+      var(--spacing-m)
+      var(--spacing-s)
+      var(--spacing-l);
+
+    i {
+      font-size: 16px;
+      padding: 0 0 0 var(--spacing-s);
+    }
+  }
+
+  @if $txtbtn {
+    color: $primary-color1;
+    padding: var(--spacing-s) var(--spacing-l);
+
+    &:hover,
+    &:active {
+      box-shadow: $shadow500;
+      background: $R100;
+      color:$white;
+    }
+    &:active {
+      background: $R200;
+      color:$white;
+    }
+  }
+
+  @if $outlinebtn {
+    color: $black;
+    border: 1px solid $black;
+    padding: var(--spacing-s) var(--spacing-l);
+  }
+}
+
+.activebtn {
+  @include btn($default: true);
+}
+
+.transparentbtn {
+  @include btn($default: false, $transparent: true);
+}
+
+.lefticon {
+  @include btn($default: false, $lefticon: true);
+}
+
+.righticon {
+  @include btn($default: false, $righticon: true);
+}
+
+.txtbtn {
+  @include btn($default: false, $txtbtn: true);
+}
+
+.outlinebtn {
+  @include btn($default: false, $outlinebtn: true);
+}
+
+@mixin fabbtn($width: 56px, $height: 56px) {
+  width: $width;
+  height: $height;
+  background: $primary-color1;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    height: 14px;
+    width: 2px;
+    background: $white;
+    position: absolute;
+    top: 20px;
+  }
+
+  &::after {
+    content: "";
+    height: 14px;
+    width: 2px;
+    background: $white;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 20px;
+  }
+}
+
+.fabbtn {
+  @include fabbtn($width: 56px, $height: 56px);
+}
+
+.fabbtnsmall {
+  @include fabbtn($width: 40px, $height: 40px);
+
+  &::before {
+    top: 10px;
+  }
+
+  &::after {
+    top: 10px;
+  }
+}

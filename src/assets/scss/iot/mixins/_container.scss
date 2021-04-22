@@ -1,0 +1,8 @@
+//contaner
+@mixin container {
+    max-width: $container;
+    width: 100%;
+    margin: auto;
+    @include clearfix;
+  }
+  

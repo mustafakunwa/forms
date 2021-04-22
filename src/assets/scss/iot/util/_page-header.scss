@@ -1,0 +1,24 @@
+$headerbg: #efeff0;
+
+.pageheader {
+  background: $headerbg;
+  padding: var(--spacing-xxl-2);
+  margin-bottom: var(--spacing-xxl-2);
+
+  .heading-wrap {
+    .mainheading {
+      font-size: $h4-font-size;
+      line-height: 1.25;
+      font-weight: 600;
+      color: $black;
+    }
+
+    .semiheading {
+      font-size: $headingreg;
+      line-height: 1.25;
+      letter-spacing: 0.4px;
+      color: $deepgrey;
+      padding: var(--spacing-s) 0 0;
+    }
+  }
+}

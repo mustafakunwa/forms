@@ -1,0 +1,34 @@
+.react-datepicker__month-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	& > div {
+		padding: 4px 8px;
+		//width: calc(100% / 3);
+        text-align: center;
+        border-radius: 14px;
+        min-width: 40px;
+        margin: 2px 0;
+	}
+}
+
+
+.react-datepicker__month-text {
+	cursor: pointer;
+	&:hover {
+		background: rgba($functionary-color1, 0.1);
+	}
+}
+.react-datepicker__month--disabled {
+    color: $grey;
+	&:hover {
+		background: transparent;
+		cursor: default;
+	}
+}
+.react-datepicker__month--selected {
+	border-radius: 50%;
+	background: $functionary-color1;
+	color: $white;
+}
+

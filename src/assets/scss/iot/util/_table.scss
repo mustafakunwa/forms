@@ -1,0 +1,194 @@
+.table-wrap {
+    table {
+      width: 100%;
+      position: relative;
+      thead {
+        tr {
+          th {
+            text-align: left;
+            background-color: $bggrey;
+            padding: 16px 8px;
+            font-weight: 700;
+            color: $black;
+            border-right: 1px solid $white;
+            border-left: 1px solid $white;
+          }
+        }
+        @media #{$medium-down} {
+          display: none;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: left;
+            padding: 16px 8px;
+            border-bottom: 1px solid $lightgrey;
+            .dot {
+              position: relative;
+              padding-left: 8px;
+              &:before {
+                position: absolute;
+                left: 0;
+                content: "";
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: $secondary-color6;
+                top: calc(50% - 2px);
+              }
+            }
+            .editm {
+              display: none;
+            }
+            @media #{$medium-down} {
+              vertical-align: top;
+              &.checkbox-col {
+                position: absolute;
+                .checkbox-wrap {
+                  position: absolute;
+                  right: 0;
+                }
+              }
+              display: inline-block;
+              width: 100%;
+              border-bottom: unset;
+              &:last-child {
+                border-bottom: 1px solid $lightgrey;
+              }
+              .editm {
+                @include text(14px, 600, 20px, $black);
+                text-transform: uppercase;
+                text-align: center;
+                display: block;
+                margin-left: 8px;
+              }
+              .centerm {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+            @media #{$iPad} {
+              vertical-align: top;
+              &.col-md-three {
+                width: 33.33%;
+              }
+              &.col-md-four {
+                width: 25%;
+              }
+            }
+            @media #{$small-down} {
+              vertical-align: top;
+              &.col-sm-half {
+                width: 50%;
+              }
+              &.col-sm-three {
+                width: 50%;
+              }
+            }
+            .pos-relative {
+              position: relative;
+            }
+          }
+          &:hover {
+            td {
+              background-color: rgba(2, 123, 252, 0.04);
+            }
+          }
+        }
+      }
+      &.table-designm {
+        .table-headingm {
+          display: none;
+        }
+        @media #{$medium-down} {
+          .table-headingm {
+            display: block;
+            @include text(12px, 400, 15px, $deepgrey);
+            margin-bottom: 4px;
+          }
+        }
+      }
+      tfoot {
+        tr {
+          td {
+            .more-items {
+              display: none;
+              @media #{$medium-down} {
+                display: block;
+                padding: 16px;
+                text-transform: uppercase;
+                text-align: center;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .table-header {
+    padding: 24px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $lightgrey;
+    @media #{$small-down} {
+      padding: 16px 10px 10px;
+    }
+    .header-left {
+      font-size: 24px;
+      line-height: 30px;
+      color: $black;
+      @media #{$small-down} {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+      }
+      span {
+        color: $primary-color1;
+      }
+    }
+    .header-right {
+      .action-btn {
+        .action-text {
+          color: $primary-color1;
+          text-transform: uppercase;
+          text-align: right;
+          cursor: pointer;
+          @media #{$small-down} {
+            display: none;
+          }
+        }
+        .action-img {
+          display: none;
+          @media #{$small-down} {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  
+  .table-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    .b2b-lib-selectWrapper {
+      .b2b-lib-select {
+        margin-right: 20px;
+      }
+      .b2b-lib-optionList {
+        height: auto;
+        max-height: unset;
+        bottom: 100%;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+  
