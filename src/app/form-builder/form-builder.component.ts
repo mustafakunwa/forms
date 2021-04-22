@@ -23,6 +23,12 @@ export class FormBuilderComponent implements OnInit {
         fieldsCtrls[field.key] = new FormControl(field.value || '', [
           ...validators,
         ]);
+      }else{
+        let opts = {};
+        for (let opt of field.options) {
+          opts[opt.key] = new FormControl(opt.value);
+        }
+        fieldsCtrls[field.key] = new FormGroup(opts)
       }
     }
     this.form = new FormGroup(fieldsCtrls);

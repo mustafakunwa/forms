@@ -5,7 +5,11 @@
 
 <form [formGroup]="form" clsss="form">
   <div *ngFor="let field of fields">
-    <app-input [field]="field" [form]="form"></app-input>
+    <div [ngSwitch]="field.type">
+      <app-input [field]="field" [form]="form" *ngSwitchCase="'text'"></app-input>
+      <app-multi-checkbox [field]="field" [form]="form" *ngSwitchCase="'checkbox'"></app-multi-checkbox>
+    </div>
+
     <div class="form__hint" *ngIf="field.hint">{{ field.hint }}</div>
     <div *ngFor="let error of field.errorMessage">
       <div class="form__error" *ngIf="isControlHasError(field.key, error.key)">

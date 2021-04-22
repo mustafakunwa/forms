@@ -34,7 +34,7 @@
             cursor: pointer;
 
             display: flex;
-            align-items: normal;
+            align-items: center;
             &::before {
                 content: "";
                 display: inline-block;
@@ -62,11 +62,6 @@
                 border-right: none;
                 border-top: none;
                 transform: translate(3px, 4px) rotate(-45deg);
-            }
-
-            div {
-                display: flex;
-                align-self: center;
             }
         }
 

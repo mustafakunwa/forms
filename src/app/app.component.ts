@@ -31,6 +31,17 @@ export class AppComponent {
       value: '',
       required: true,
     },
+
+    {
+      type: 'checkbox',
+      key: 'hobby',
+      label: 'Hobby',
+      required: true,
+      options: [
+        { key: 'f', label: 'Fishing' },
+        { key: 'c', label: 'Cooking' },
+      ],
+    },
   ];
 
   getFields() {
