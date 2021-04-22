@@ -20,10 +20,10 @@
 
     <div class="form__hint" *ngIf="field.hint">{{ field.hint }}</div>
     <div class="form__error" *ngIf="isControlHasError(field.key, 'required')">
-      {{ field.errorMessage?.required }}
+      {{ field.errorMessage?.required || field.label + ' is required'}}
     </div>
     <div class="form__error" *ngIf="isControlHasError(field.key, 'pattern')">
-      {{ field.errorMessage?.pattern }}
+      {{ field.errorMessage?.pattern || 'Invalid value for '+ field.label}}
     </div>
   </div>
 </form>
