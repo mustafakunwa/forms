@@ -14,7 +14,7 @@ export class AppComponent {
       value: 'Mustafa',
       required: true,
       placeholder: 'Enter your First Name',
-      errorMessage: [{ key: 'required', message: 'FirstName is required' }],
+      errorMessage: { required: 'FirstName is required' },
     },
     {
       type: 'text',

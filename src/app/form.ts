@@ -8,7 +8,7 @@ export class QuestionBase<T> {
   controlType: string;
   type: string;
   options: { key: string; value: string }[];
-  errorMessage: { key: string; message: string }[];
+  errorMessage: { required: string; pattern: string };
   inputType: string;
   placeholder: string;
   hint: string;
@@ -24,7 +24,7 @@ export class QuestionBase<T> {
       controlType?: string;
       type?: string;
       options?: { key: string; value: string }[];
-      errorMessage?: { key: string; message: string }[];
+      errorMessage?: { required: string; pattern: string };
       inputType?: string;
       placeholder?: string;
       hint?: string;
@@ -39,7 +39,7 @@ export class QuestionBase<T> {
     this.type = options.type || '';
     this.options = options.options || [];
     this.pattern = options.pattern;
-    this.errorMessage = options.errorMessage || [];
+    this.errorMessage = options.errorMessage || null;
     this.hint = options.hint || '';
     this.inputType = options.inputType || 'text';
     this.placeholder = options.placeholder || '';
