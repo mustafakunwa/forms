@@ -3,8 +3,15 @@
 <br />
 <br />
 
-<form [formGroup]="form">
+<form [formGroup]="form" clsss="form">
   <div *ngFor="let field of fields">
     <app-input [field]="field" [form]="form"></app-input>
+
+    <div class="form__hint" *ngIf="field.hint">{{ field.hint }}</div>
+    <div *ngFor="let error of errorMessage">
+      <div class="form__error" *ngIf="isControlHasError(field.key, error.key)">
+        {{ error.message }}
+      </div>
+    </div>
   </div>
 </form>

@@ -1,1 +1,4 @@
-<p>input works!</p>
+<div class="inputtextbox" [formGroup]="form">
+  <input [type]="field.inputType || 'text'" [placeholder]="field.placeholder || field.label" />
+  <label for="firstname">{{ field.label || "" }}</label>
+</div>

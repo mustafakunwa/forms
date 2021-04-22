@@ -21,4 +21,14 @@ export class FormBuilderComponent implements OnInit {
     }
     this.form = new FormGroup(fieldsCtrls);
   }
+
+  isControlHasError(controlName: string, validationType: string): boolean {
+    const control = this.form.controls[controlName];
+    if (!control) {
+      return false;
+    }
+
+    const result = control.hasError(validationType) && (control.dirty || control.touched);
+    return result;
+  }
 }

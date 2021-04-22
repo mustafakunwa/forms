@@ -13,6 +13,7 @@ export class AppComponent {
       label: 'First Name',
       value: '',
       required: true,
+      hint:'Enter your First Name'
     },
     {
       type: 'text',
