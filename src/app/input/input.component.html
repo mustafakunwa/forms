@@ -1,4 +1,5 @@
 <div class="inputtextbox" [formGroup]="form">
-  <input [type]="field.inputType || 'text'" [placeholder]="field.placeholder || field.label" />
+  <input [type]="field.inputType || 'text'" [placeholder]="field.placeholder || field.label"  [formControlName]="field.key"/>
   <label for="firstname">{{ field.label || "" }}</label>
+  {{field.key.value}}
 </div>

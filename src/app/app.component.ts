@@ -11,9 +11,10 @@ export class AppComponent {
       type: 'text',
       key: 'firstName',
       label: 'First Name',
-      value: '',
+      value: 'Mustafa',
       required: true,
-      hint:'Enter your First Name'
+      hint: 'Enter your First Name',
+      errorMessage: [{ key: 'required', message: 'FirstName is required' }],
     },
     {
       type: 'text',

@@ -1,4 +1,4 @@
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -14,9 +14,15 @@ export class FormBuilderComponent implements OnInit {
 
   ngOnInit(): void {
     let fieldsCtrls = {};
-    for (let f of this.fields) {
-      if (f.type != 'checkbox') {
-        fieldsCtrls[f.name] = new FormControl(f.value || '');
+    for (let field of this.fields) {
+      let validators = [];
+      if (field.required) validators.push(Validators.required);
+      if (field.pattern) validators.push(Validators.pattern(field.pattern));
+
+      if (field.type != 'checkbox') {
+        fieldsCtrls[field.key] = new FormControl(field.value || '', [
+          ...validators,
+        ]);
       }
     }
     this.form = new FormGroup(fieldsCtrls);
@@ -28,7 +34,8 @@ export class FormBuilderComponent implements OnInit {
       return false;
     }
 
-    const result = control.hasError(validationType) && (control.dirty || control.touched);
+    const result =
+      control.hasError(validationType) && (control.dirty || control.touched);
     return result;
   }
 }
