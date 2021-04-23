@@ -15,19 +15,10 @@ describe('IconButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(IconButtonComponent);
     component = fixture.componentInstance;
-    component.icon = '../../assets/search_black_24dp.svg';
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('height should not be null', () => {
-    expect(component.styles).not.toBe(null);
-  });
-
-  it('icon should not be null', () => {
-    expect(component.icon).not.toBe(null);
   });
 });

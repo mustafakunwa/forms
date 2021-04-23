@@ -1,6 +1,6 @@
 .icon-button{
     cursor: pointer;
-    img{
+    > ::ng-deep * {
         width: 100%;
         height: 100%;
     }
