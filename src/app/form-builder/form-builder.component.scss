@@ -1,6 +1,10 @@
 @import "../../assets/scss/iot/settings";
 
 .form {
+
+    &__input{
+        margin: 20px;
+    }
     &__hint {
     }
     &__error {

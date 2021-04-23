@@ -19,7 +19,8 @@ $nunito: "Nunito", sans-serif;
 @import "./util/page-header";
 @import "./util/form/textbox";
 @import "./util/form/button";
- @import "./util/form/checkbox";
+@import "./util/form/checkbox";
+@import "./util/form/select";
 @import "./mixins/monthPicker";
 
 // box sizing

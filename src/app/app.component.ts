@@ -42,6 +42,18 @@ export class AppComponent {
         { key: 'c', label: 'Cooking' },
       ],
     },
+
+    {
+      type: 'dropdown',
+      key: 'country',
+      label: 'Country',
+      value: 'in',
+      required: true,
+      options: [
+        { key: 'in', label: 'India' },
+        { key: 'us', label: 'USA' }
+      ]
+    },
   ];
 
   getFields() {

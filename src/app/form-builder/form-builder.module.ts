@@ -4,6 +4,7 @@ import { FormBuilderComponent } from './form-builder.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputModule } from '../input/input.module';
 import { MultiCheckboxModule } from '../multi-checkbox/multi-checkbox.module';
+import { SelectModule } from '../select/select.module';
 
 @NgModule({
   declarations: [FormBuilderComponent],
@@ -13,6 +14,7 @@ import { MultiCheckboxModule } from '../multi-checkbox/multi-checkbox.module';
     ReactiveFormsModule,
     InputModule,
     MultiCheckboxModule,
+    SelectModule
   ],
 })
 export class FormBuilderModule {}

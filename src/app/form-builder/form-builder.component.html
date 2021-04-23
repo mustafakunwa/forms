@@ -4,13 +4,18 @@
 <br />
 
 <form [formGroup]="form" clsss="form">
-  <div *ngFor="let field of fields">
+  <div *ngFor="let field of fields" class="form__input">
     <div [ngSwitch]="field.type">
       <app-input
         [field]="field"
         [form]="form"
         *ngSwitchCase="'text'"
       ></app-input>
+      <app-select
+      [field]="field"
+      [form]="form"
+      *ngSwitchCase="'dropdown'"
+    ></app-select>
       <app-multi-checkbox
         [field]="field"
         [form]="form"
