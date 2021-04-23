@@ -47,4 +47,6 @@ export class AppComponent {
   getFields() {
     return this.fields;
   }
+
+  submit(){}
 }

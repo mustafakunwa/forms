@@ -1,0 +1,60 @@
+@import "../../assets/scss/iot/mixins/buttons";
+@import "../../assets/scss/iot/settings";
+
+.primary-btn {
+    @include btn(8px, true, false, false, false, 150, $primary-color1);
+
+    &:hover {
+        @include btn(8px, true, false, false, false, 150, $R100);
+    }
+    &:active {
+        @include btn(8px, true, false, false, false, 150, $R200);
+    }
+    &:disabled {
+        @include btn(8px, true, false, false, true, 150, $b500);
+    }
+}
+
+.secondary-btn {
+    @include btn(8px, true, false, false, false, 150, $white, $black);
+
+    &:hover {
+        @include btn(8px, true, false, false, false, 150, $b800, $black);
+    }
+    &:active {
+        @include btn(8px, true, false, false, false, 150, $b700, $black);
+    }
+    &:disabled {
+        @include btn(8px, true, false, false, true, 150, $b500, $black);
+    }
+}
+
+.tertiory-btn {
+    @include btn(8px, true, false, true, false, 150, $white, $black);
+    &:hover {
+        @include btn(8px, true, false, false, false, 150, $b100);
+    }
+    &:focus {
+        @include btn(8px, true, false, false, false, 150, $black, $white);
+    }
+    &:active {
+        @include btn(8px, true, false, false, false, 150, $b200);
+    }
+    &:disabled {
+        @include btn(8px, true, false, false, true, 150, $b700);
+    }
+}
+
+.link-btn{
+    @include btn(8px, true, false, false, false, 150, transparent,$primary-color1);
+  
+    &:hover {
+        @include btn(8px, true, false, false, false, 150,transparent, $R200);
+    }
+    &:active {
+        @include btn(8px, true, false, false, false, 150,transparent, $R300);
+    }
+    &:disabled {
+        @include btn(8px, true, false, false, true, 150,transparent, $b600);
+    }
+}

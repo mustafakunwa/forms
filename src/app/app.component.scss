@@ -1,0 +1,76 @@
+@import "../assets/scss/iot/settings";
+@import "../assets/scss/iot/mixins/text";
+.header {
+    display: flex;
+    padding: 24px;
+    align-items: center;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+
+        h1 {
+            @include text(20px, 600, 30px, $white);
+        }
+
+        p {
+            @include text(14px, 400, 20px, $b300);
+        }
+    }
+}
+
+.profile {
+    &__body {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+    }
+    &__manage {
+        border: 1px solid $b700;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 24px;
+
+        &-name {
+            cursor: pointer;
+          
+            @include text(14px, 600, 19.1px, $black);
+
+            img{
+                width: 5px;
+                height: 100%;
+                margin-inline-start: 10px;
+            }
+        }
+        p {
+            @include text(12px, 400, 18px, $deepgrey);
+        }
+    }
+    &__button {
+        height: 48px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 12px;
+        @include text(16px, 700, 24px, $b100);
+
+        &:hover {
+            background-color: $mediumgrey;
+        }
+    }
+
+    &__logout {
+        // margin-top: 12px;
+        height: 48px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        @include text(14px, 600, 16px, $b200);
+        a {
+            color: $primary-color1;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import "../../assets/scss/iot/settings";
+
+.activityCard {
+    position: relative;
+    max-width: 400px;
+    overflow: visible;
+    box-shadow: $shadow600;
+    animation: fadeIn ease 1s;
+    border-radius: 12px;
+    margin: 50px auto 0 auto ; 
+}
