@@ -11,7 +11,7 @@ import { ProfileModule } from './profile/profile.module';
 import { ButtonModule } from './button/button.module';
 import { IconButtonModule } from './icon-button/icon-button.module';
 import { ActivityCardModule } from './activity-card/activity-card.module';
-
+import { QuoteService } from './services/quote.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +27,7 @@ import { ActivityCardModule } from './activity-card/activity-card.module';
     IconButtonModule,
     ActivityCardModule,
   ],
-  providers: [],
+  providers: [QuoteService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
