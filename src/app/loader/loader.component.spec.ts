@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from "@angular/platform-browser";
 import { LoaderComponent } from './loader.component';
 
 describe('LoaderComponent', () => {
@@ -19,7 +19,20 @@ describe('LoaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should not create Loader',()=>{
+    let spanEl=fixture.debugElement.query(By.css('span'))
+    expect(spanEl).toBeFalsy()
+  });
+
+  it('should create Loader',()=>{
+    component.show=true;
+    fixture.detectChanges();
+    let spanEl=fixture.debugElement.query(By.css('span'))
+    expect(spanEl).toBeTruthy()
+  })
+
 });
