@@ -1,3 +1,4 @@
+import { ActivityBodyComponent } from './activity-card/activity-body/activity-body.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,6 +12,7 @@ import { ProfileModule } from './profile/profile.module';
 import { ButtonModule } from './button/button.module';
 import { IconButtonModule } from './icon-button/icon-button.module';
 import { ActivityCardModule } from './activity-card/activity-card.module';
+import { LoaderModule } from './loader/loader.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +27,7 @@ import { ActivityCardModule } from './activity-card/activity-card.module';
     ButtonModule,
     IconButtonModule,
     ActivityCardModule,
+    LoaderModule 
   ],
   bootstrap: [AppComponent],
 })
