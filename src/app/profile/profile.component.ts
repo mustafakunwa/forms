@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   @Input() styles: object = { height: '100px', width: '100px' };
+  @Input() classes:string;
+  
   constructor() {}
 
   ngOnInit(): void {}
