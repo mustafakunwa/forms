@@ -13,6 +13,7 @@ import { ButtonModule } from './button/button.module';
 import { IconButtonModule } from './icon-button/icon-button.module';
 import { ActivityCardModule } from './activity-card/activity-card.module';
 import { LoaderModule } from './loader/loader.module';
+import { GlobalSearchModule } from './global-search/global-search.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { LoaderModule } from './loader/loader.module';
     ButtonModule,
     IconButtonModule,
     ActivityCardModule,
-    LoaderModule 
+    LoaderModule,
+    GlobalSearchModule,
   ],
   bootstrap: [AppComponent],
 })
