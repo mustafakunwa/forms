@@ -1,5 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GlobalSearchComponent } from './global-search/global-search.component';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -61,81 +60,21 @@ export class AppComponent {
   searchResults: any[] = [];
   data = [
     {
-      BASKET_ID: 4567812313297,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
+      BASKET_ID: 123,
+      Name: 'MSISDN number lies in account 1-43245622',
     },
     {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
+      BASKET_ID: 1234,
+      Name: 'MSISDN number lies in account 1-15264787',
     },
     {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
+      BASKET_ID: 1233,
+      Name: 'MSISDN number lies in account 1-123456',
     },
   ];
   loading: boolean = false;
+  terms: string[] = ['BASKET_ID', 'Name'];
 
-  @ViewChild(GlobalSearchComponent) GlobalSearch: GlobalSearchComponent;
   getFields() {
     return this.fields;
   }
@@ -149,10 +88,7 @@ export class AppComponent {
     }, 2000);
   }
 
-  routeToSelect(result) {
-    this.GlobalSearch.clear();
-    this.GlobalSearch.hide();
-  }
+  routeTo(result) {}
 
   submit() {}
 }

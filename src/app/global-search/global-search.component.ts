@@ -8,12 +8,14 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   styleUrls: ['./global-search.component.scss'],
 })
 export class GlobalSearchComponent implements OnInit {
-  @Input() delay: number = 200;
+  @Input() debounceTime: number = 200;
   @Input() searchResults: any[] = [];
   @Input() loading: boolean = false;
   @Input() minLength: number = 3;
-  @Input() placholder:string=""
+  @Input() placholder: string = '';
+  @Input() terms: string[] = [];
   @Output() getsearchResults: EventEmitter<any> = new EventEmitter<any>();
+  @Output() goto: EventEmitter<any> = new EventEmitter<any>();
 
   show = false;
   searchTerm: FormControl = new FormControl('');
@@ -36,7 +38,7 @@ export class GlobalSearchComponent implements OnInit {
 
   search() {
     this.searchTerm.valueChanges
-      .pipe(debounceTime(this.delay), distinctUntilChanged())
+      .pipe(debounceTime(this.debounceTime), distinctUntilChanged())
       .subscribe((res) => {
         this.searchResults = [];
         if (res?.length >= this.minLength) {
@@ -46,5 +48,11 @@ export class GlobalSearchComponent implements OnInit {
           this.hide();
         }
       });
+  }
+
+  select(result){
+    this.hide()
+    this.clear()
+    this.goto.emit(result)
   }
 }
