@@ -3,28 +3,14 @@
   <input
     class="search__input"
     [formControl]="searchTerm"
-    placeholder="Search Basket | MSISDN | SIM Number"
+    [placeholder]="placholder"
     type="search"
   />
 
   <div *ngIf="show" class="search__result">
     <ng-container *ngIf="searchResults.length && !loading">
       <div class="search__result-suggestion">Search Suggestion</div>
-      <div
-        *ngFor="let result of searchResults | slice: 0:3"
-        class="search__result-item"
-        (click)="routeToSelect(result)"
-      >
-        <div class="search__result-image">
-          <img src="../../assets/images/search.svg" class="search__img" />
-        </div>
-        <div class="search__result-name">
-          <span class="search__result-id">{{ result.BASKET_ID }}</span>
-          <span class="search__result-number">
-            MSISDN number lies in account 1-43245622</span
-          >
-        </div>
-      </div>
+      <ng-content></ng-content>
     </ng-container>
     <div
       *ngIf="searchResults.length == 0 && !loading"
@@ -33,7 +19,7 @@
       No Result
     </div>
     <div *ngIf="loading" class="search__result-loader">
-      <app-loader [show]="loading" ></app-loader>
+      <app-loader [show]="loading"></app-loader>
     </div>
   </div>
 </div>

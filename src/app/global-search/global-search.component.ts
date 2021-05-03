@@ -1,5 +1,5 @@
 import { FormControl } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
@@ -8,84 +8,14 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   styleUrls: ['./global-search.component.scss'],
 })
 export class GlobalSearchComponent implements OnInit {
-  data = [
-    {
-      BASKET_ID: 4567812313297,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-    {
-      BASKET_ID: 4567897,
-      SIM_NO: '123123121212313213132',
-      MSISDN: '1132456454',
-      SIM_STATUS: 'Available',
-      SIM_IMSI: '1231231321321223123',
-      BASKET_NAME: '12312312132132',
-      BASKET_OWNER: '12345789787',
-    },
-  ];
+  @Input() delay: number = 200;
+  @Input() searchResults: any[] = [];
+  @Input() loading: boolean = false;
+  @Input() minLength: number = 3;
+  @Input() placholder:string=""
+  @Output() getsearchResults: EventEmitter<any> = new EventEmitter<any>();
 
-  searchResults: any[] = [];
   show = false;
-  loading: boolean = false;
   searchTerm: FormControl = new FormControl('');
 
   constructor() {}
@@ -106,24 +36,15 @@ export class GlobalSearchComponent implements OnInit {
 
   search() {
     this.searchTerm.valueChanges
-      .pipe(debounceTime(300), distinctUntilChanged())
+      .pipe(debounceTime(this.delay), distinctUntilChanged())
       .subscribe((res) => {
         this.searchResults = [];
-        if (res?.length >= 3) {
-          this.loading = true;
+        if (res?.length >= this.minLength) {
           this.open();
-          setTimeout(() => {
-            this.searchResults = this.data;
-            this.loading = false;
-          }, 2000);
+          this.getsearchResults.emit();
         } else {
           this.hide();
         }
       });
-  }
-
-  routeToSelect(result) {
-    this.clear();
-    this.hide();
   }
 }

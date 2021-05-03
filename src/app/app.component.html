@@ -49,23 +49,46 @@
 <br />
 <br />
 
-<div style="background-color: black;padding: 10px 50px;margin: 10px;">
-  <app-global-search></app-global-search>
+<div style="background-color: black; padding: 10px 50px; margin: 10px">
+  <app-global-search
+    delay="300"
+    [searchResults]="searchResults"
+    [loading]="loading"
+    minLength="3"
+    (getsearchResults)="getsearchResults()"
+    placholder="Search Basket | MSISDN | SIM Number"
+  >
+    <div
+      *ngFor="let result of searchResults | slice: 0:3"
+      class="search__result-item"
+      (click)="routeToSelect(result)"
+    >
+      <div class="search__result-image">
+        <img src="../../assets/images/search.svg" class="search__img" />
+      </div>
+      <div class="search__result-name">
+        <span class="search__result-id">{{ result.BASKET_ID }}</span>
+        <span class="search__result-number">
+          MSISDN number lies in account 1-43245622</span
+        >
+      </div>
+    </div>
+  </app-global-search>
 </div>
 
 <br />
 <br />
 <br />
 
-<div style="background-color: white;padding: 10px 50px;margin: 10px;">
-  <app-global-search></app-global-search>
-</div>
 
 <br />
 <br />
 <br />
 
-<app-profile [styles]="{ height: '100px', width: '100px' }" classes="dummyClass">
+<app-profile
+  [styles]="{ height: '100px', width: '100px' }"
+  classes="dummyClass"
+>
   <img src="../assets/pic.png" />
 </app-profile>
 
@@ -96,6 +119,3 @@
 <br />
 
 <app-loader [show]="true"></app-loader>
-
-
-

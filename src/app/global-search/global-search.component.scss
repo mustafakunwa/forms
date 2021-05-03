@@ -51,7 +51,7 @@
         border-top: 1px solid $b800;
 
         &-suggestion {
-            padding-top: 10px;
+            padding: 10px 0;
             @include text(12px, 600, 15px, $b300);
         }
         &-item {
@@ -94,6 +94,10 @@
             text-align: center;
             padding: 20px;
             @include text(16px, 600, 19.1px, $b100);
+        }
+
+        &-loader{
+            font-size: 30px;
         }
     }
 }

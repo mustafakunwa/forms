@@ -79,3 +79,42 @@
     height: auto;
     width: auto;
 }
+
+.search {
+    &__result {
+        &-item {
+            table-layout: fixed;
+            padding: 5px 0;
+            cursor: pointer;
+            text-decoration: none !important;
+            display: flex;
+            align-items: center;
+        }
+
+        &-image {
+            text-align: left;
+            max-width: 50px;
+            min-width: 50px;
+            height: 25px;
+            vertical-align: middle;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        &-name {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #000;
+            text-decoration: none !important;
+        }
+
+        &-id {
+            padding-inline-end: 20px;
+            @include text(14px, 600, 19.1px, $b100);
+        }
+        &-number {
+            @include text(12px, 600, 15px, $b300);
+        }
+    }
+}
