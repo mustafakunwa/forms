@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { GlobalSearchComponent } from './global-search/global-search.component';
 
 @Component({
   selector: 'app-root',
@@ -75,6 +76,8 @@ export class AppComponent {
   loading: boolean = false;
   terms: string[] = ['BASKET_ID', 'Name'];
 
+  @ViewChild(GlobalSearchComponent) globalSearch: GlobalSearchComponent;
+
   getFields() {
     return this.fields;
   }
@@ -88,7 +91,10 @@ export class AppComponent {
     }, 2000);
   }
 
-  routeTo(result) {}
+  routeTo(result) {
+    this.globalSearch.clear();
+    this.globalSearch.hide();
+  }
 
   submit() {}
 }
