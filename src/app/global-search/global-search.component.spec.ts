@@ -42,10 +42,11 @@ describe('GlobalSearchComponent', () => {
   }));
 
   it('should have search card', fakeAsync(() => {
-    component.open();
-    component.searchResults = [{data:'some Response'}];
+    component.search();
+    component.searchTerm.setValue('1213');
     fixture.detectChanges();
     tick(Infinity);
+    fixture.detectChanges();
     let element = fixture.debugElement
       .query(By.css('div'))
       .query(By.css('.search__result'));
@@ -55,6 +56,7 @@ describe('GlobalSearchComponent', () => {
   it('should show No result Found', () => {
     component.open();
     component.searchResults = [];
+
     fixture.detectChanges();
     let element = fixture.debugElement
       .query(By.css('div'))
