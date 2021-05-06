@@ -2,9 +2,13 @@
     label {
         z-index: 0;
         position: relative;
-        display: inline-block;
+        // display: inline-block;
         color: $grey;
         line-height: 1.5;
+
+        //Added By Mustafa 
+        display: block;
+        padding-bottom: 10px;
 
         >input {
             appearance: none;

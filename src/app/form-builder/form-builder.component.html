@@ -12,23 +12,28 @@
         *ngSwitchCase="'text'"
       ></app-input>
       <app-select
-      [field]="field"
-      [form]="form"
-      *ngSwitchCase="'dropdown'"
-    ></app-select>
+        [field]="field"
+        [form]="form"
+        *ngSwitchCase="'dropdown'"
+      ></app-select>
       <app-multi-checkbox
         [field]="field"
         [form]="form"
         *ngSwitchCase="'checkbox'"
       ></app-multi-checkbox>
+      <app-radio
+        [field]="field"
+        [form]="form"
+        *ngSwitchCase="'radio'"
+      ></app-radio>
     </div>
 
     <div class="form__hint" *ngIf="field.hint">{{ field.hint }}</div>
     <div class="form__error" *ngIf="isControlHasError(field.key, 'required')">
-      {{ field.errorMessage?.required || field.label + ' is required'}}
+      {{ field.errorMessage?.required || field.label + " is required" }}
     </div>
     <div class="form__error" *ngIf="isControlHasError(field.key, 'pattern')">
-      {{ field.errorMessage?.pattern || 'Invalid value for '+ field.label}}
+      {{ field.errorMessage?.pattern || "Invalid value for " + field.label }}
     </div>
   </div>
 </form>

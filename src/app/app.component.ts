@@ -56,6 +56,17 @@ export class AppComponent {
         { key: 'us', label: 'USA' },
       ],
     },
+    {
+      type: 'radio',
+      key: 'gender',
+      label: 'Gender',
+      value: '',
+      required: true,
+      options: [
+        { key: 'm', label: 'Male' },
+        { key: 'f', label: 'Female' },
+      ],
+    },
   ];
 
   searchResults: any[] = [];
