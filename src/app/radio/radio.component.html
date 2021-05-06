@@ -1,8 +1,11 @@
 <div [formGroup]="form" class="radio">
-  <label *ngFor="let opt of field.options">
-    <input type="radio" [value]="opt.key" [formControlName]="field.key" />
-    <span>
-      {{ opt.label }}
-    </span>
-  </label>
+  <span>{{ field.label }}</span>
+  <div *ngFor="let opt of field.options">
+    <label>
+      <input type="radio" [value]="opt.key" [formControlName]="field.key" />
+      <span>
+        {{ opt.label }}
+      </span>
+    </label>
+  </div>
 </div>
