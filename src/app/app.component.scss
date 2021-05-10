@@ -26,11 +26,15 @@
         flex-direction: column;
         padding: 24px;
     }
-    &__manage {
+    &__plan{
+        margin-top: 12px;
+    }
+    &__manage,
+    &__plan {
         border: 1px solid $b700;
         border-radius: 12px;
         padding: 12px;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
 
         &-name {
             cursor: pointer;
@@ -46,7 +50,38 @@
         p {
             @include text(12px, 400, 18px, $deepgrey);
         }
+        &-centers {
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        &-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 10px;
+            p {
+                @include text(12px, 400, 18px, $deepgrey);
+                text-align: center;
+            }
+        }
+
+        &-img {
+            border-radius: 50%;
+            background-color: $white;
+            box-shadow: $shadow600;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
     }
+
     &__button {
         height: 48px;
         padding: 0 12px;
