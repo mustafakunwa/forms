@@ -1,0 +1,17 @@
+<div class="plan" *ngIf="plan">
+  <span class="plan__type">XS</span>
+  <div class="plan__pricing">
+    {{plan.price|currency:'INR':true:'1.0'}}<span> /mon</span>
+    <p>Plus taxes</p>
+  </div>
+  <div class="plan__sms">
+    <img src="../../../assets/images/right_tick.svg" />
+    Total SMS : {{plan.sms}}
+  </div>
+  <div class="plan__validity">
+    <img src="../../../assets/images/right_tick.svg" />
+    Validity : {{plan.days}} Days
+  </div>
+
+  <app-button type="primary" (clicked)="buy()">Buy Now</app-button>
+</div>

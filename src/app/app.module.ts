@@ -14,6 +14,7 @@ import { IconButtonModule } from './icon-button/icon-button.module';
 import { ActivityCardModule } from './activity-card/activity-card.module';
 import { LoaderModule } from './loader/loader.module';
 import { GlobalSearchModule } from './global-search/global-search.module';
+import { PlanSubscriptionModule } from './plan-subscription/plan-subscription.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { GlobalSearchModule } from './global-search/global-search.module';
     ActivityCardModule,
     LoaderModule,
     GlobalSearchModule,
+    PlanSubscriptionModule
   ],
   bootstrap: [AppComponent],
 })

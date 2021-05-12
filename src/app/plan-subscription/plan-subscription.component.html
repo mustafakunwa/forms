@@ -1,0 +1,28 @@
+<app-card [styles]="{ height: 'auto' }">
+  <div class="subscription">
+    <h2 class="subscription__heading">Plan Subscription Details</h2>
+    <p class="subscription__description">
+      Plan description : in two three lines. Need content writers help in
+      creating the plan discription.<br />
+      What user will gain after purchasing plan. detailed explantion will be
+      better.
+    </p>
+    <div class="subscription__benifits">
+      <div class="subscription__benifits-desc">
+        Basic Benifits: Discription 1: Onliner detail will be better
+      </div>
+      <div class="subscription__benifits-desc">
+        Basic Benifits: Discription 1: Onliner detail will be better
+      </div>
+      <div class="subscription__benifits-desc">
+        Basic Benifits: Discription 1: Onliner detail will be better
+      </div>
+    </div>
+
+    <div class="subscription__plans">
+      <app-card *ngFor="let i of [].constructor(6)">
+        <app-plan-card (selected)="buy($event)" [plan]="plan"></app-plan-card>
+      </app-card>
+    </div>
+  </div>
+</app-card>

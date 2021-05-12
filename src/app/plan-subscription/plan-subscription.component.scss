@@ -1,0 +1,38 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+.subscription {
+    padding: 24px;
+    &__heading {
+        @include text(24px, 600, 28px, $black);
+    }
+    &__description {
+        @include text(14px, 400, 20px, $b300);
+    }
+    &__benifits {
+        padding-top: 10px;
+        &-desc {
+            @include text(16px, 400, 24px, $b100);
+            &::before {
+                content: "";
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                background-color: $black;
+                display: inline-block;
+                margin-inline-end: 12px;
+            }
+        }
+    }
+
+    &__plans {
+        margin-top: 42px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 165px);
+        grid-gap: 14px;
+
+        ::ng-deep .section-box {
+            margin: 0;
+        }
+    }
+}

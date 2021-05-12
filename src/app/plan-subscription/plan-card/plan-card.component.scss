@@ -1,0 +1,38 @@
+@import "../../../assets/scss/iot/settings";
+@import "../../../assets/scss/iot/mixins/text";
+
+.plan {
+    padding: 12px;
+
+    &__type {
+        padding: 2px 8px;
+        background-color: $secondary-color1;
+        border-radius: 4px;
+        @include text(12px, 600, 18px, $white);
+    }
+
+    &__pricing {
+        margin: 24px 0 18px 0;
+        @include text(24px, 600, 28px, $black);
+        span {
+            @include text(14px, 400, 20px, $b300);
+        }
+        p {
+            @include text(12px, 400, 18px, $b300);
+        }
+    }
+
+    &__sms,
+    &__validity {
+        @include text(12px, 400, 18px, $b100);
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        img {
+            margin-inline-end: 6px;
+        }
+    }
+    &__validity{
+        margin-bottom: 34px;
+    }
+}
