@@ -3,7 +3,28 @@
   margin: 24px 0 12px 0;
 
   .ng-touched.ng-invalid {
-    border-color: $primary-color1;
+    border-width: 2px;
+    border-color: $validate-error;
+  }
+  .ng-touched.ng-invalid + label {
+    color: $validate-error;
+  }
+
+  .ng-touched.ng-valid {
+    border-width: 2px;
+    border-color: $validate-success;
+  }
+  .ng-touched.ng-valid + label {
+    color: $validate-success;
+  }
+
+  &:disabled {
+    border-width: 2px;
+    border-color: $validate-disable;
+  }
+
+  &:disabled + label {
+    color: $validate-disable;
   }
 
   label {

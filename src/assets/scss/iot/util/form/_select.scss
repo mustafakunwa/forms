@@ -2,11 +2,38 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   position: relative;
   width: 100%;
+  
+  .ng-touched.ng-invalid {
+    border-width: 2px;
+    border-color: $validate-error;
+  }
+  .ng-touched.ng-invalid + label {
+    color: $validate-error;
+  }
+
+  .ng-touched.ng-valid {
+    border-width: 2px;
+    border-color: $validate-success;
+  }
+  .ng-touched.ng-valid + label {
+    color: $validate-success;
+  }
+
+  &:disabled {
+    border-width: 2px;
+    border-color: $validate-disable;
+  }
+
+  &:disabled + label {
+    color: $validate-disable;
+  }
+
   .select-text {
     appearance: none;
     -webkit-appearance: none;
     color: gray;
   }
+
   &:after {
     position: absolute;
     top: 18px;

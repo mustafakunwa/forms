@@ -49,7 +49,7 @@ export class AppComponent {
       type: 'dropdown',
       key: 'country',
       label: 'Country',
-      value: 'in',
+      value: '',
       required: true,
       options: [
         { key: 'in', label: 'India' },
