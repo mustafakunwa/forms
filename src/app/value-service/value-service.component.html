@@ -1,0 +1,42 @@
+<div >
+  <app-card [styles]="{ overflow: 'hidden' }">
+    <div class="valueAdded">
+      <div class="valueAdded__header">
+        <img class="valueAdded__banner" [src]="service.banner" />
+        <div class="valueAdded__serviceLogo">
+          <img [src]="service.logo" />
+        </div>
+      </div>
+
+      <div class="valueAdded__service">
+        <div class="valueAdded__service-name">
+          <div>
+            <h1>{{ service.service }}</h1>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+        <div class="valueAdded__service-pricing">
+          <h1>Starting From</h1>
+          <p>
+            {{ service.amount | currency: "INR":true:"1.0" }}<span> /mon</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="valueAdded__description">
+        Plan description : in two three lines. Need content writers help in
+        creating the plan discription. What user will gain after purchasing
+        plan. detailed explantion will be better.
+      </div>
+
+      <div class="valueAdded__feature">
+        Key Features
+        <p *ngFor="let feature of service.feature | slice: 0:3">
+          <img src="../../assets/images/tick.svg" />{{ feature }}
+        </p>
+        <app-button type="link" class="valueAdded__more">+more</app-button>
+        <app-button type="primary" class="valueAdded__button">{{service.button}}</app-button>
+      </div>
+    </div>
+  </app-card>
+</div>

@@ -1,0 +1,46 @@
+@import "../../assets/scss/iot/settings";
+
+$transition_time: 0.2s;
+.transition {
+    transition: all $transition_time ease-in-out;
+}
+
+::ng-deep .carousel {
+    color: white;
+    padding-bottom: 50px;
+    .content {
+        display: flex;
+        align-items: center;
+        .item {
+            width: 100%;
+            padding: 0.5em;
+            display: block;
+
+            &.fade_animation {
+                transition: opacity 0.295s linear $transition_time;
+            }
+
+            &.fade_animation_0 {
+                transition: opacity 0.295s linear;
+            }
+        }
+    }
+
+    ul.indicators {
+        li:first-child,
+        li:last-child {
+            display: none !important;
+        }
+    }
+
+    .ball {
+        width: 24px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: rgba($color: $black, $alpha: 0.2);
+
+        &.activate {
+            background-color: rgba($color: $black, $alpha: 0.8);
+        }
+    }
+}

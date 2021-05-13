@@ -1,0 +1,98 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+:host ::ng-deep .section-box {
+    margin: 0;
+}
+
+.valueAdded {
+    &__header {
+        position: relative;
+        margin-bottom: 46px;
+    }
+    &__banner {
+        width: 100%;
+        height: auto;
+    }
+    &__serviceLogo {
+        width: 56px;
+        height: 56px;
+        background: $white;
+        border-radius: 50%;
+        border: 1px solid $b800;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -20px;
+        left: 24px;
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+    &__service {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 12px;
+        &-name {
+            display: flex;
+            h1 {
+                @include text(16px, 700, 24px, $black);
+            }
+            p {
+                @include text(10px, 600, 13.6px, $b200);
+            }
+            &::before {
+                content: "";
+                border-left: 4px solid $primary-color1;
+                border-radius: 4px;
+                margin-inline-end: 8px;
+            }
+        }
+
+        &-pricing {
+            margin-inline-end: 12px;
+            h1 {
+                @include text(10px, 400, 18px, $b100);
+            }
+            p {
+                @include text(24px, 600, 28px, $black);
+                span {
+                    @include text(14px, 400, 20px, $b300);
+                }
+            }
+        }
+    }
+    &__description {
+        margin: 24px 24px 18px 24px;
+        @include text(14px, 400, 20px, $b100);
+    }
+    &__feature {
+        margin: 24px 24px 18px 24px;
+        display: flex;
+        flex-direction: column;
+        @include text(12px, 600, 18px, $b100);
+
+        p:first-child {
+            margin-top: 12px;
+        }
+        p {
+            @include text(12px, 400, 16.4px, $b200);
+            margin-bottom: 6px;
+            img {
+                width: 10px;
+                margin-inline-end: 10px;
+            }
+        }
+    }
+    &__more {
+        ::ng-deep button {
+            padding-top: 1px;
+        }
+    }
+    &__button {
+        margin-top: 12px;
+    }
+}

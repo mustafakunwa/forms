@@ -1,0 +1,30 @@
+<ngx-hm-carousel
+  [(ngModel)]="currentIndex"
+  [show-num]="3"
+  [autoplay-speed]="speed"
+  [infinite]="items"
+  [aniTime]="200"
+  [autoplay]="autoplay"
+  class="carousel c-accent"
+>
+  <section ngx-hm-carousel-container class="content">
+    <article
+      class="item cursor-pointer"
+      ngx-hm-carousel-item
+      *ngFor="let avatar of items; let i = index"
+      [ngClass]="{ visible: currentIndex === i }"
+    >
+      <app-value-service [service]="avatar"></app-value-service>
+    </article>
+    <ng-template #infiniteContainer></ng-template>
+  </section>
+
+  <ng-template #carouselDot let-model>
+    <div
+      class="ball bg-accent"
+      [class.activate]="model.index === model.currentIndex"
+    ></div>
+  </ng-template>
+
+
+</ngx-hm-carousel>

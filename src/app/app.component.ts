@@ -87,6 +87,20 @@ export class AppComponent {
   loading: boolean = false;
   terms: string[] = ['BASKET_ID', 'Name'];
 
+  service: any = {
+    banner: '../assets/images/Web Banner.png',
+    logo: '../assets/images/location.svg',
+    service: 'Location Service',
+    description: 'One word for description',
+    amount: 499,
+    feature: [
+      'Basic Benifits: Discription 1: Onliner detail will be better',
+      'Basic Benifits: Discription 1: Onliner detail will be better',
+      'Basic Benifits: Discription 1: Onliner detail will be better',
+      'Basic Benifits: Discription 1: Onliner detail will be better',
+    ],
+    button: 'Explore Now',
+  };
   @ViewChild(GlobalSearchComponent) globalSearch: GlobalSearchComponent;
 
   getFields() {

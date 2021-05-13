@@ -15,7 +15,8 @@ import { ActivityCardModule } from './activity-card/activity-card.module';
 import { LoaderModule } from './loader/loader.module';
 import { GlobalSearchModule } from './global-search/global-search.module';
 import { PlanSubscriptionModule } from './plan-subscription/plan-subscription.module';
-
+import { ValueServiceModule } from './value-service/value-service.module';
+import { SubscriptionPlanModule } from './subscription-plan/subscription-plan.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,7 +32,9 @@ import { PlanSubscriptionModule } from './plan-subscription/plan-subscription.mo
     ActivityCardModule,
     LoaderModule,
     GlobalSearchModule,
-    PlanSubscriptionModule
+    PlanSubscriptionModule,
+    ValueServiceModule,
+    SubscriptionPlanModule 
   ],
   bootstrap: [AppComponent],
 })

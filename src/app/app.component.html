@@ -1,8 +1,8 @@
-<app-plan-subscription></app-plan-subscription>
-
-<br />
-<br />
-<br />
+<app-subscription-plan></app-subscription-plan><br /><br /><br />
+<div style="width: 536px; margin: 20px auto">
+  <app-value-service [service]="service"></app-value-service> <br /><br /><br />
+</div>
+<app-plan-subscription></app-plan-subscription><br /><br /><br />
 
 <app-form-builder [fields]="getFields()"></app-form-builder>
 
@@ -124,7 +124,7 @@
 <br />
 <br />
 
-<app-button type="primary" [disabled]="false" (clicked)="submit()"
+<app-button type="primary" [disabled]="true" (clicked)="submit()"
   >Primary</app-button
 >
 <app-button type="secondary">Secondary</app-button>
