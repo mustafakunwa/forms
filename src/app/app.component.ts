@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { GlobalSearchComponent } from './global-search/global-search.component';
-import { actionButton, buttonType } from './button.model';
+import { actionButton, buttonFormat, buttonType } from './button.model';
 
 @Component({
   selector: 'app-root',
@@ -106,8 +106,9 @@ export class AppComponent {
 
   primaryButton: actionButton = {
     disabled: false,
-    type: buttonType.primary,
+    format: buttonFormat.primary,
     onClick: this.submit.bind(this),
+    type: buttonType.button,
   };
 
   getFields() {
@@ -128,6 +129,5 @@ export class AppComponent {
     this.globalSearch.hide();
   }
 
-  submit(event?: any) {
-  }
+  submit(event?: any) {}
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { actionButton, buttonType } from '../button.model';
+import { actionButton, buttonFormat, buttonType } from '../button.model';
 
 @Component({
   selector: 'app-dynamic-button',
@@ -14,25 +14,27 @@ export class DynamicButtonComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.setButton();
+    this.setButtonClass();
   }
 
-  setButton() {
-    switch (this.model.type) {
-      case buttonType.primary:
+  setButtonClass() {
+    switch (this.model.format) {
+      case buttonFormat.primary:
         this.btnClass = 'primary-btn';
         break;
-      case buttonType.secondary:
+      case buttonFormat.secondary:
         this.btnClass = 'secondary-btn';
         break;
-      case buttonType.tertiory:
+      case buttonFormat.tertiory:
         this.btnClass = 'tertiory-btn';
         break;
-      case buttonType.link:
+      case buttonFormat.link:
         this.btnClass = 'link-btn';
         break;
       default:
         this.btnClass = 'primary-btn';
     }
   }
+
+ 
 }
