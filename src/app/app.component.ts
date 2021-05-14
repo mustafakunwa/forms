@@ -104,12 +104,12 @@ export class AppComponent {
   };
   @ViewChild(GlobalSearchComponent) globalSearch: GlobalSearchComponent;
 
-  primaryButton: actionButton = {
+  primaryButton: actionButton = new actionButton({
     disabled: false,
     format: buttonFormat.primary,
     onClick: this.submit.bind(this),
     type: buttonType.button,
-  };
+  });
 
   getFields() {
     return this.fields;

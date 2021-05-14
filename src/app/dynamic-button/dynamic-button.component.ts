@@ -18,23 +18,8 @@ export class DynamicButtonComponent implements OnInit {
   }
 
   setButtonClass() {
-    switch (this.model.format) {
-      case buttonFormat.primary:
-        this.btnClass = 'primary-btn';
-        break;
-      case buttonFormat.secondary:
-        this.btnClass = 'secondary-btn';
-        break;
-      case buttonFormat.tertiory:
-        this.btnClass = 'tertiory-btn';
-        break;
-      case buttonFormat.link:
-        this.btnClass = 'link-btn';
-        break;
-      default:
-        this.btnClass = 'primary-btn';
-    }
+    this.btnClass = this.model.format
+      ? `${this.model.format}-btn`
+      : this.btnClass;
   }
-
- 
 }
