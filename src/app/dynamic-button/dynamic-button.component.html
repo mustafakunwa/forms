@@ -1,0 +1,7 @@
+<button
+  [ngClass]="btnClass"
+  [disabled]="model.disabled"
+  (click)="model.onClick()"
+>
+  <ng-content></ng-content>
+</button>

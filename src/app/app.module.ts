@@ -17,6 +17,8 @@ import { GlobalSearchModule } from './global-search/global-search.module';
 import { PlanSubscriptionModule } from './plan-subscription/plan-subscription.module';
 import { ValueServiceModule } from './value-service/value-service.module';
 import { SubscriptionPlanModule } from './subscription-plan/subscription-plan.module';
+import { DynamicButtonModule } from './dynamic-button/dynamic-button.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -34,7 +36,8 @@ import { SubscriptionPlanModule } from './subscription-plan/subscription-plan.mo
     GlobalSearchModule,
     PlanSubscriptionModule,
     ValueServiceModule,
-    SubscriptionPlanModule 
+    SubscriptionPlanModule,
+    DynamicButtonModule 
   ],
   bootstrap: [AppComponent],
 })

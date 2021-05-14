@@ -105,13 +105,11 @@ export class AppComponent {
   @ViewChild(GlobalSearchComponent) globalSearch: GlobalSearchComponent;
 
   primaryButton: actionButton = {
-    label: 'primary',
     disabled: false,
     type: buttonType.primary,
     onClick: this.submit.bind(this),
   };
 
-  
   getFields() {
     return this.fields;
   }
@@ -130,5 +128,6 @@ export class AppComponent {
     this.globalSearch.hide();
   }
 
-  submit() {}
+  submit(event?: any) {
+  }
 }
