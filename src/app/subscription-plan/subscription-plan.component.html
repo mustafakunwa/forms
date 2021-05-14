@@ -1,1 +1,32 @@
-<app-carousel [items]="items"></app-carousel>
+<div class="subscriptionPlan">
+  <h1 class="subscriptionPlan__heading">Plans and Subscriptions</h1>
+  <div class="subscriptionPlan__tabs">
+    <div class="subscriptionPlan__tab" [class.active]="activateTab == 'detail'">
+      Detail
+    </div>
+    <div class="subscriptionPlan__tab">Order History</div>
+  </div>
+  <div class="subscriptionPlan__addOn">
+    <div class="subscriptionPlan__addOn-heading">Add Ons</div>
+    <div class="subscriptionPlan__addOn-services">
+      <app-value-service
+        [service]="service"
+        *ngFor="let service of services"
+      ></app-value-service>
+    </div>
+
+    <div class="subscriptionPlan__video">
+      <h1 class="subscriptionPlan__video-heading">Videos</h1>
+      <app-card>
+        <div class="subscriptionPlan__video-video">
+          <img src="../../assets/images/video.svg" />
+        </div>
+      </app-card>
+    </div>
+
+    <div class="subscriptionPlan__explore">
+      <h1 class="subscriptionPlan__video-heading">Explore our digital Store</h1>
+      <app-carousel [items]="items"></app-carousel>
+    </div>
+  </div>
+</div>

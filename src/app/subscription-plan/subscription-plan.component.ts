@@ -38,9 +38,7 @@ export class SubscriptionPlanComponent implements OnInit {
       service: 'SMS Service',
       description: 'One word for description',
       amount: 599,
-      feature: [
-        'Basic Benifits: Discription 1: Onliner detail will be better',
-      ],
+      feature: ['Basic Benifits: Discription 1: Onliner detail will be better'],
       button: 'Explore Now 3',
     },
     {
@@ -70,6 +68,35 @@ export class SubscriptionPlanComponent implements OnInit {
         'Basic Benifits: Discription 1: Onliner detail will be better',
       ],
       button: 'Explore Now 5',
+    },
+  ];
+  activateTab: string = 'detail';
+
+  services = [
+    {
+      banner: '../assets/images/Web Banner.png',
+      logo: '../assets/images/location.svg',
+      service: 'Remote Service',
+      description: 'One word for description',
+      amount: 499,
+      feature: [
+        'Basic Benifits: Discription 1: Onliner detail will be better',
+        'Basic Benifits: Discription 1: Onliner detail will be better',
+      ],
+      button: 'Explore Now',
+    },
+    {
+      banner: '../assets/images/Web Banner.png',
+      logo: '../assets/images/location.svg',
+      service: 'Location Service',
+      description: 'One word for description',
+      amount: 499,
+      feature: [
+        'Basic Benifits: Discription 1: Onliner detail will be better',
+        'Basic Benifits: Discription 1: Onliner detail will be better',
+        'Basic Benifits: Discription 1: Onliner detail will be better',
+      ],
+      button: 'Explore Now 2',
     },
   ];
   constructor() {}

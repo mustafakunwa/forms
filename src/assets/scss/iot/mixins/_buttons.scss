@@ -75,13 +75,13 @@
     //color: $primary-darkgrey;
     cursor: no-drop;
 
-    &:hover,
-    &:focus,
-    &:active {
-      background: $bg-color;
-      color: $color;
-      border-color: $bg-color;
-    }
+    // &:hover,
+    // &:focus,
+    // &:active {
+    //   background: $bg-color;
+    //   color: $color;
+    //   border-color: $bg-color;
+    // }
   }
 
   &:focus {
