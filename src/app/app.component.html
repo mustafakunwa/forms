@@ -1,10 +1,13 @@
 <br /><app-dynamic-button [model]="primaryButton">Primary</app-dynamic-button
 ><br /><br /><br />
-<!-- <app-subscription-plan></app-subscription-plan><br /><br /><br />
+<app-dynamic-button [model]="primaryButton">Open dialog</app-dynamic-button
+><br /><br /><br />
+
+<app-subscription-plan></app-subscription-plan><br /><br /><br />
 <div style="width: 536px; margin: 20px auto">
   <app-value-service [service]="service"></app-value-service> <br /><br /><br />
 </div>
-<app-plan-subscription></app-plan-subscription><br /><br /><br /> -->
+<app-plan-subscription></app-plan-subscription><br /><br /><br />
 
 <app-form-builder [fields]="getFields()"></app-form-builder>
 
@@ -149,3 +152,4 @@
 <br />
 
 <app-loader [show]="true"></app-loader>
+<router-outlet></router-outlet>

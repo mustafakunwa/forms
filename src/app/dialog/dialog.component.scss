@@ -1,0 +1,37 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/animations";
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($b200, 0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    box-shadow: $shadow600;
+    border-radius: 8px;
+    animation: createBox 0.3s;
+}
+
+@include keyframes(createBox) {
+    0% {
+        @include transform(scale(0));
+    }
+    30% {
+        @include transform(scale(0.5));
+    }
+    100% {
+        @include transform(scale(1));
+    }
+}

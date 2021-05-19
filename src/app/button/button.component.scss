@@ -13,6 +13,7 @@
     &:disabled {
         @include btn(8px, true, false, false, true, 140, $b500);
     }
+    
 }
 
 .secondary-btn {
@@ -35,7 +36,7 @@
         @include btn(8px, true, false, false, false, 140, $b100);
     }
     &:focus {
-        @include btn(8px, true, false, false, false, 140, $black, $white);
+        @include btn(8px, true, false, true, false, 140, $black, $white);
     }
     &:active {
         @include btn(8px, true, false, false, false, 140, $b200);

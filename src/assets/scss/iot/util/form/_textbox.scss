@@ -18,6 +18,14 @@
     color: $validate-success;
   }
 
+  .ng-touched.ng-valid:placeholder-shown {
+    border-width: 2px;
+    border-color: $validate-warning;
+  }
+  .ng-touched.ng-valid:placeholder-shown + label {
+    color: $validate-warning;
+  }
+
   &:disabled {
     border-width: 2px;
     border-color: $validate-disable;

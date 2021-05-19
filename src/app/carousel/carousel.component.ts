@@ -10,9 +10,10 @@ export class CarouselComponent implements OnInit {
   @Input() auto: boolean = false;
   @Input() interval: number = 3000;
 
+  
   currentIndex = 1;
   speed = this.interval;
-  infinite = true;
+  infinite = false;
   direction = 'right';
   directionToggle = true;
   autoplay = false;

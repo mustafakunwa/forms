@@ -1,6 +1,8 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
 import { GlobalSearchComponent } from './global-search/global-search.component';
 import { actionButton, buttonFormat, buttonType } from './button.model';
+import { DialogService } from './dialog/dialog.service';
+import { DialogComponentComponent } from './dialog-component/dialog-component.component';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,7 @@ import { actionButton, buttonFormat, buttonType } from './button.model';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   fields: any[] = [
     {
       type: 'text',
@@ -111,6 +113,9 @@ export class AppComponent {
     type: buttonType.button,
   });
 
+  constructor(private dialog: DialogService) {}
+
+  ngOnInit() {}
   getFields() {
     return this.fields;
   }
@@ -129,5 +134,11 @@ export class AppComponent {
     this.globalSearch.hide();
   }
 
-  submit(event?: any) {}
+  submit(event?: any) {
+    const dialogIns = this.dialog.open(DialogComponentComponent, {
+      data: {},
+    });
+
+    dialogIns?.afterClosed.subscribe((res) => {});
+  }
 }
