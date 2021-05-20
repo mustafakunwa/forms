@@ -1,0 +1,15 @@
+@import '../../../assets/scss/iot/settings';
+@import '../../../assets/scss/iot/mixins/text';
+
+.dialog {
+    &__footer {
+        margin-top: 27px;
+        margin-bottom: 16px;
+    }
+
+    &__heading {
+        &-text {
+            @include text(24px, 600, 28px, $black);
+        }
+    }
+}

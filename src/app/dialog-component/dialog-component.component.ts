@@ -1,6 +1,6 @@
 import { actionButton, buttonFormat, buttonType } from './../button.model';
 import { Component, OnInit } from '@angular/core';
-import { DialogRef } from '../dialog/dialog-refs';
+import { DialogRef, DialogConfig } from '../dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,11 @@ export class DialogComponentComponent implements OnInit {
     type: buttonType.button,
   });
 
-  constructor(private dialogRef: DialogRef, private router: Router) {}
+  constructor(
+    private dialogRef: DialogRef,
+    public config: DialogConfig,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 

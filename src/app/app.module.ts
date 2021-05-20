@@ -18,7 +18,7 @@ import { PlanSubscriptionModule } from './plan-subscription/plan-subscription.mo
 import { ValueServiceModule } from './value-service/value-service.module';
 import { SubscriptionPlanModule } from './subscription-plan/subscription-plan.module';
 import { DynamicButtonModule } from './dynamic-button/dynamic-button.module';
-import { DialogModule } from './dialog/dialog.module';
+import { DialogModule } from './dialog';
 import { DialogComponentComponent } from './dialog-component/dialog-component.component';
 
 @NgModule({

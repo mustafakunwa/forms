@@ -1,0 +1,30 @@
+@import "../../../assets/scss/iot/settings";
+@import "../../../assets/scss/iot/mixins/text";
+
+.dialog {
+    &__heading {
+        margin-top: 8px;
+        display: flex;
+        align-items: baseline;
+        &-text {
+            @include text(24px, 600, 28px, $black);
+            &.default {
+                @include text(24px, 600, 28px, $black);
+            }
+            &.success {
+                color: $validate-success;
+            }
+            &.warning {
+                color: $validate-warning;
+            }
+        }
+
+        span {
+            margin-inline-start: 24px;
+            height: 22px;
+            background: $secondary-color1;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+    }
+}

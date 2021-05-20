@@ -18,10 +18,10 @@
     background-color: $white;
     display: flex;
     flex-direction: column;
-    padding: 8px;
     box-shadow: $shadow600;
     border-radius: 8px;
     animation: createBox 0.3s;
+    padding: 8px 16px;
 }
 
 @include keyframes(createBox) {

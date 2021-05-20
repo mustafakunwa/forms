@@ -136,7 +136,7 @@ export class AppComponent implements OnInit {
 
   submit(event?: any) {
     const dialogIns = this.dialog.open(DialogComponentComponent, {
-      data: {},
+      data: {message:'SMS Box  '},
     });
 
     dialogIns?.afterClosed.subscribe((res) => {});

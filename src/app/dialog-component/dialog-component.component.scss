@@ -2,26 +2,13 @@
 @import "../../assets/scss/iot/mixins/text";
 
 .dialog {
-    padding: 8px 16px;
     width: 450px;
-
-    &__heading {
-        &-text {
-            @include text(24px, 600, 28px, $black);
-        }
-    }
     &__content {
-        margin-top: 16px;
         p {
             @include text(12px, 400, 18px, $black);
         }
-        b{
+        b {
             font-weight: bold;
         }
-    }
-
-    &__footer{
-        margin-top: 27px;
-        margin-bottom: 16px;
     }
 }

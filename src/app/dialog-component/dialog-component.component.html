@@ -1,14 +1,20 @@
 <div class="dialog">
-  <div class="dialog__heading">
-    <h1 class="dialog__heading-text">Message Center</h1>
-  </div>
-  <div class="dialog__content">
-    <p>
-      <b>SMS Box :</b> To avail the services please purchase the subscription. A
-      brief discription regarding SMS Box. With following Benifits.
-    </p>
-  </div>
-  <div class="dialog__footer">
-    <app-dynamic-button [model]="primaryButton">Subscribe Now</app-dynamic-button>
-  </div>
+  <app-dialog-header
+    type="warning"
+    message="Message center"
+    iconPath="../../assets/images/lock.svg"
+  ></app-dialog-header>
+  <app-dialog-body>
+    <div class="dialog__content">
+      <p>
+        <b>{{config?.data?.message}} :</b> To avail the services please purchase the subscription.
+        A brief discription regarding SMS Box. With following Benifits.
+      </p>
+    </div>
+  </app-dialog-body>
+  <app-dialog-footer>
+    <app-dynamic-button [model]="primaryButton"
+      >Subscribe Now</app-dynamic-button
+    >
+  </app-dialog-footer>
 </div>
