@@ -20,9 +20,14 @@ import { SubscriptionPlanModule } from './subscription-plan/subscription-plan.mo
 import { DynamicButtonModule } from './dynamic-button/dynamic-button.module';
 import { DialogModule } from './dialog';
 import { DialogComponentComponent } from './dialog-component/dialog-component.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, DialogComponentComponent],
+  declarations: [
+    AppComponent,
+    DialogComponentComponent,
+    SidebarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

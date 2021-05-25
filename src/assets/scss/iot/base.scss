@@ -23,6 +23,7 @@ $nunito: "Nunito", sans-serif;
 @import "./util/form/select";
 @import "./util/form/radio";
 @import "./mixins/monthPicker";
+@import './util/tooltip';
 
 // box sizing
 *,

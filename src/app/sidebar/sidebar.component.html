@@ -1,0 +1,70 @@
+<nav class="sidebar" [class.sidebar__expanded]="open">
+  <div class="sidebar__humburger">
+    <span class="sidebar__humburger-title">Airtel Mobile</span>
+    <div class="sidebar__humburger-icon" (click)="open = !open">
+      <img src="../../assets/images/humburger.svg" alt="humburger" />
+    </div>
+  </div>
+  <div class="sidebar__content">
+    <ul class="sidebar__navbar-lists">
+      <li *ngFor="let menu of menus">
+        <div
+          class="sidebar__navbar-item"
+          *ngIf="menu.type == 'link'"
+          [class.item-isActive]="isActive == menu.name"
+        >
+          <a
+            (mouseenter)="mouseover($event, menu.name)"
+            (mouseleave)="mouseLeave()"
+            id="{{ menu.menu }}"
+          >
+            <span class="sidebar__navbar-icon">
+              <img [src]="menu.icon" alt="humburger" />
+            </span>
+            <span class="sidebar__navbar-title">{{ menu.name }}</span>
+          </a>
+        </div>
+        <div class="sidebar__navbar-item" *ngIf="menu.type == 'childlink'">
+          <a
+            class="sidebar__navbar-head"
+            (mouseenter)="mouseover($event, menu.name)"
+            (mouseleave)="mouseLeave()"
+            (click)="menuToggle(menu.name)"
+            id="{{ menu.menu }}"
+          >
+            <span class="sidebar__navbar-icon"
+              ><img [src]="menu.icon" alt="humburger"
+            /></span>
+            <span class="sidebar__navbar-title">{{ menu.name }}</span>
+            <span class="sidebar__navbar-chevron"
+              ><img
+                src="../../assets/images/chevron_down.svg"
+                alt=""
+                class="sidebar__navbar-chevron-icon"
+                [class.chevActive]="menu.active"
+            /></span>
+          </a>
+          <div class="sidebar__navbar-body" [class.active]="menu.active">
+            <a
+              class="sidebar__navbar-accordianBody"
+              *ngFor="let sub of menu.children"
+              [class.item-isActive]="isActive == sub.name"
+            >
+              <div class="accordian-name">{{ sub.name }}</div>
+              <div class="accordian-logo">
+                <img [src]="sub.icon" alt="humburger" />
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="sidebar__navbar-short" *ngIf="menu.type == 'short'">
+          {{ menu.name }}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar__tooltip tooltip" [ngStyle]="tooltip.style">
+    {{ tooltip.name }}
+  </div>
+  <div class="sidebar__copyright">© 2021 <span>Airtel IOT Hub</span></div>
+</nav>

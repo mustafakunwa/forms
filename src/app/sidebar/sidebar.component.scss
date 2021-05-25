@@ -1,0 +1,384 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/util/tooltip";
+
+.sidebar {
+  background-color: $white;
+  box-shadow: 0px 4px 12px -6px rgb(12 15 18 / 8%), 0px 6px 24px -4px rgb(12 15 18 / 8%);
+  width: 70px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  z-index: 423;
+  border-radius: 0px 12px 12px 0px;
+  border: 1px solid $b800;
+
+  @media #{$medium-down} {
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-100%);
+  }
+  @media #{$laptop-down} {
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-100%);
+  }
+  &__humburger {
+    background-color: $bggrey;
+    display: flex;
+    width: 100%;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+    &-title {
+      color: $b300;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 1.4;
+      flex-grow: 1;
+      padding-right: var(--spacing-s);
+      display: none;
+      opacity: 0;
+      white-space: nowrap;
+      transition: all 0.4s ease-in-out;
+    }
+    &-icon {
+      text-align: center;
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+      padding: var(--spacing-l) 26px;
+    }
+  }
+  &__content {
+    flex-grow: 1;
+    height: calc(100vh - 254px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    @media #{$large-down} {
+      height: calc(100vh - 101px);
+    }
+  }
+  &__copyright {
+    font-weight: 600;
+    font-size: 10px;
+    color: $b300;
+    padding: var(--spacing-l);
+    white-space: nowrap;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    span {
+      transition: all ease-in-out 0.4s;
+      opacity: 0;
+      visibility: hidden;
+      margin-left: 2px;
+    }
+  }
+  &__tooltip {
+    position: fixed;
+    padding: var(--spacing-m);
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: normal;
+    transform: translate(8px, -50%);
+    transition: all ease-in-out 0.35s;
+    &:before {
+      content: "";
+      border: 0 solid transparent;
+      border-top-width: 5px;
+      border-bottom-width: 5px;
+      border-right: 5px solid $charcol;
+      position: absolute;
+      top: calc(50% - 6px);
+      right: 100%;
+      left: auto;
+    }
+  }
+
+  &__navbar {
+    &-lists {
+      margin-top: var(--spacing-xs);
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        position: relative;
+
+        .sidebar__navbar-item {
+          position: relative;
+          // display: inline-flex;
+          overflow: hidden;
+          width: 100%;
+          &.item-isActive {
+            .sidebar__navbar-icon {
+              filter: invert(13%) sepia(100%) saturate(5119%) hue-rotate(352deg) brightness(77%) contrast(111%);
+            }
+          }
+        }
+
+        a {
+          display: flex;
+          padding: var(--spacing-m) var(--spacing-l);
+          align-items: center;
+          cursor: pointer;
+          transition: all ease-in-out 0.4s;
+          text-decoration: none;
+          color: $b100;
+          width: 100%;
+          line-height: 1.2857;
+          &:hover {
+            .sidebar__navbar-icon {
+              filter: invert(13%) sepia(100%) saturate(5119%) hue-rotate(352deg) brightness(77%) contrast(111%);
+            }
+          }
+          .sidebar__navbar-icon {
+            min-width: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .sidebar__navbar-title {
+            flex-grow: 1;
+            white-space: nowrap;
+            font-weight: 400;
+            font-size: 14px;
+            color: $b100;
+            transition: all ease-in-out 0.4s;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            max-width: 20ch;
+            text-overflow: ellipsis;
+          }
+          .sidebar__navbar-chevron {
+            margin-inline-start: 10px;
+            overflow: hidden;
+            opacity: 0;
+          }
+          &:hover {
+            .icon {
+              i {
+                &:before {
+                  color: $primary-color1 !important;
+                }
+              }
+            }
+            .title {
+              color: $black;
+            }
+          }
+        }
+        &.active {
+          a {
+            .sidebar__navbar-icon {
+              i {
+                &:before {
+                  color: $primary-color1 !important;
+                }
+              }
+            }
+            .sidebar__navbar-title {
+              font-weight: 600;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+    &-short {
+      font-weight: 600;
+      color: $b300;
+      padding: var(--spacing-m);
+      position: relative;
+      font-size: 0;
+      white-space: nowrap;
+      &:before {
+        content: "";
+        height: 1px;
+        width: 22px;
+        position: absolute;
+        background-color: $b700;
+        display: inline-block;
+        top: 50%;
+        left: calc(50% - 11px);
+      }
+    }
+    &-body {
+      display: none;
+    }
+  }
+
+  &__expanded {
+    max-width: 224px;
+    width: 224px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .sidebar__tooltip {
+      display: none !important;
+    }
+
+    @media #{$large-down} {
+      visibility: visible;
+      transition: all 0.4s ease-in-out;
+      transform: translateX(0%);
+    }
+    .sidebar__navbar-lists {
+      padding: 0;
+      list-style: none;
+      li {
+        a {
+          padding-left: var(--spacing-xs);
+          padding-right: var(--spacing-m);
+
+          &:hover {
+            .sidebar__navbar-title,
+            .accordian-name {
+              color: $black;
+            }
+
+            .sidebar__navbar-icon,
+            .accordian-logo {
+              filter: invert(13%) sepia(100%) saturate(5119%) hue-rotate(352deg) brightness(77%) contrast(111%);
+            }
+          }
+        }
+        .item-isActive {
+          .sidebar__navbar-title,
+          .accordian-name {
+            font-weight: 600;
+            color: #0c0f12;
+          }
+
+          .sidebar__navbar-icon,
+          .accordian-logo {
+            color: $primary-color1 !important;
+          }
+        }
+        .sidebar__navbar-title {
+          display: block;
+          visibility: visible;
+          opacity: 1;
+        }
+        .sidebar__navbar-chevron {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .sidebar__navbar-chevron-icon {
+          transition: all 4s ease-in-out;
+          &.chevActive {
+            transition: all 4s ease-in-out;
+            transform: rotateX(180deg);
+            -webkit-transform: rotateX(180deg);
+          }
+        }
+      }
+    }
+
+    .sidebar__humburger {
+      padding-left: var(--spacing-l);
+      padding-right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .sidebar__humburger-title {
+        display: block;
+        opacity: 1;
+      }
+      .sidebar__humburger-icon {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .sidebar__copyright {
+      @media #{$medium-down} {
+        position: sticky;
+        bottom: 0;
+        background-color: $white;
+        width: 100%;
+      }
+      span {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .sidebar__navbar-short {
+      font-size: 10px;
+      padding-left: var(--spacing-l);
+      padding-right: var(--spacing-l);
+      margin: var(--spacing-s) 0;
+      &:before {
+        content: none;
+      }
+    }
+
+    .sidebar__navbar-head {
+      width: 100%;
+      display: flex;
+      padding: var(--spacing-m) var(--spacing-l);
+      align-items: center;
+      cursor: pointer;
+      transition: all ease-in-out 0.4s;
+      text-decoration: none;
+      color: $b100;
+      width: 100%;
+      line-height: 1.2857;
+    }
+    .sidebar__navbar-body {
+      display: none;
+    }
+    .sidebar__navbar-body.active {
+      display: flex;
+      flex-direction: column;
+      -webkit-animation: fadeIn 0.4s;
+      animation: fadeIn 0.4s;
+
+      .sidebar__navbar-accordianBody {
+        display: flex;
+        padding: var(--spacing-s) var(--spacing-xs);
+      }
+      .accordian-name {
+        margin-inline-start: 35px;
+        flex-grow: 1;
+        white-space: nowrap;
+        font-weight: 400;
+        font-size: 14px;
+        color: $b100;
+        transition: all ease-in-out 0.4s;
+        overflow: hidden;
+        max-width: 17ch;
+        text-overflow: ellipsis;
+      }
+      .accordian-logo {
+        margin-inline-start: 10px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
