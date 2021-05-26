@@ -21,12 +21,17 @@ import { DynamicButtonModule } from './dynamic-button/dynamic-button.module';
 import { DialogModule } from './dialog';
 import { DialogComponentComponent } from './dialog-component/dialog-component.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { FormControlsComponent } from './form-controls/form-controls.component';
+import { UIComponent } from './ui/ui.component';
+import { MultiCheckboxModule } from './multi-checkbox/multi-checkbox.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponentComponent,
     SidebarComponent,
+    FormControlsComponent,
+    UIComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SubscriptionPlanModule,
     DynamicButtonModule,
     DialogModule,
+    MultiCheckboxModule 
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

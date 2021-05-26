@@ -1,0 +1,171 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+.header {
+    display: flex;
+    padding: 24px;
+    align-items: center;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+
+        h1 {
+            @include text(20px, 600, 30px, $white);
+        }
+
+        p {
+            @include text(14px, 400, 20px, $b300);
+        }
+    }
+}
+
+.profile {
+    &__body {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+    }
+    &__plan{
+        margin-top: 12px;
+    }
+    &__manage,
+    &__plan {
+        border: 1px solid $b700;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 12px;
+
+        &-name {
+            cursor: pointer;
+
+            @include text(14px, 600, 19.1px, $black);
+
+            img {
+                width: 5px;
+                height: 100%;
+                margin-inline-start: 10px;
+            }
+        }
+        p {
+            @include text(12px, 400, 18px, $deepgrey);
+        }
+        &-centers {
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        &-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 10px;
+            p {
+                @include text(12px, 400, 18px, $deepgrey);
+                text-align: center;
+            }
+        }
+
+        &-img {
+            border-radius: 50%;
+            background-color: $white;
+            box-shadow: $shadow600;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+
+    &__button {
+        height: 48px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 12px;
+        @include text(16px, 700, 24px, $b100);
+
+        &:hover {
+            background-color: $mediumgrey;
+        }
+    }
+
+    &__logout {
+        // margin-top: 12px;
+        height: 48px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        @include text(14px, 600, 16px, $b200);
+        a {
+            color: $primary-color1;
+            cursor: pointer;
+        }
+    }
+}
+
+.dummyClass {
+    height: auto;
+    width: auto;
+}
+
+.search {
+    &__result {
+        &-suggestion {
+            padding: 10px 0;
+            @include text(12px, 600, 15px, $b300);
+        }
+        &-item {
+            table-layout: fixed;
+            padding: 5px 0;
+            cursor: pointer;
+            text-decoration: none !important;
+            display: flex;
+            align-items: center;
+        }
+
+        &-image {
+            text-align: left;
+            max-width: 50px;
+            min-width: 50px;
+            height: 25px;
+            vertical-align: middle;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        &-name {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #000;
+            text-decoration: none !important;
+        }
+
+        &-id {
+            padding-inline-end: 10px;
+            @include text(14px, 600, 19.1px, $b100);
+        }
+        &-number {
+            @include text(12px, 600, 15px, $b300);
+        }
+
+        &-noresult,
+        &-loader {
+            text-align: center;
+            padding: 20px;
+            @include text(16px, 600, 19.1px, $b100);
+        }
+
+        &-loader {
+            font-size: 30px;
+        }
+    }
+}

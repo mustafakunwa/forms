@@ -1,9 +1,9 @@
 <div [formGroup]="form">
-  <label>{{ field.label }}</label>
-  <div [formGroupName]="field.key">
-    <div *ngFor="let opt of field.options" class="checkbox">
+  <label>{{ model.label }}</label>
+  <div [formGroupName]="model.formControlName">
+    <div *ngFor="let opt of model.options" class="checkbox">
       <label>
-        <input [formControlName]="opt.key" type="checkbox" />
+        <input [formControlName]="opt.formControlName" type="checkbox" (change)="onInputChange($event,opt.label)" />
         <span>
           {{ opt.label }}
         </span>
