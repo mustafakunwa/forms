@@ -24,6 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormControlsComponent } from './form-controls/form-controls.component';
 import { UIComponent } from './ui/ui.component';
 import { MultiCheckboxModule } from './multi-checkbox/multi-checkbox.module';
+import { CheckboxModule } from './checkbox/checkbox.module';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MultiCheckboxModule } from './multi-checkbox/multi-checkbox.module';
     SubscriptionPlanModule,
     DynamicButtonModule,
     DialogModule,
-    MultiCheckboxModule 
+    MultiCheckboxModule,
+    CheckboxModule 
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

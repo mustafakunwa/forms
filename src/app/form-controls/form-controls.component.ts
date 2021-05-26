@@ -1,6 +1,9 @@
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { dynamicCheckboxModel } from '../models/checkbox.model';
+import {
+  dynamicCheckboxModel,
+  singleCheckboxModel,
+} from '../models/checkbox.model';
 
 @Component({
   selector: 'app-form-controls',
@@ -24,6 +27,11 @@ export class FormControlsComponent implements OnInit {
     ],
   });
 
+  singleCheckbox: singleCheckboxModel = new singleCheckboxModel({
+    label: 'Accept Terms and condition',
+    formControlName: 'terms',
+  });
+
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -34,6 +42,7 @@ export class FormControlsComponent implements OnInit {
         male: this.fb.control(false),
         female: this.fb.control(false),
       }),
+      terms: this.fb.control(false),
     });
   }
 }

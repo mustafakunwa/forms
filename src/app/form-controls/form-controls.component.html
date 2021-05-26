@@ -3,3 +3,9 @@
 {{form.value|json}}
 <br><br>
 {{checkboxmodel|json}}
+
+<br><br><br>
+
+<app-checkbox [(model)]="singleCheckbox" [form]="form"></app-checkbox>
+<br><br>
+{{singleCheckbox|json}}
