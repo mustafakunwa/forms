@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { menu, menuType } from './menu.model';
+import { Menu, MenuType } from './menu.model';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -16,103 +16,109 @@ export class SidebarComponent implements OnInit {
     },
   };
 
-  isActive:string='Dashboard';
+  isActive: string = 'Dashboard';
 
-  menus: menu[] = [
+  menus: Menu[] = [
     {
       path: '',
+      id: '',
       name: 'Dashboard',
       icon: '../../assets/images/dashboard.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
     {
       path: '',
+      id: '',
       name: 'Billing Payment',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
     {
       path: '',
+      id: '',
       name: 'Circuit',
       icon: '../../assets/images/dashboard.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
     {
       path: '',
+      id: '',
       name: 'Service Request',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
     {
       name: 'Help Support',
-      type: menuType.short,
+      id: '',
+      type: MenuType.short,
     },
     {
       name: 'Service Child ',
+      id: '',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.childlink,
+      type: MenuType.childlink,
       children: [
         {
           path: '',
+          id: '',
           name: 'Service Request',
           icon: '../../assets/images/billing_payment.svg',
-          type: menuType.link,
+          type: MenuType.link,
         },
         {
           path: '',
+          id: '',
           name: 'Service Request',
           icon: '../../assets/images/billing_payment.svg',
-          type: menuType.link,
+          type: MenuType.link,
         },
       ],
     },
     {
       path: '',
+      id: '',
       name: 'Value Added Service',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
 
     {
       path: '',
+      id: '',
       name: 'Service Request Requets asfasfasf',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
 
     {
       path: '',
+      id: '',
       name: 'Service Request Requets asfasfasf',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
-
 
     {
       path: '',
+      id: '',
       name: 'Service Request Requets asfasfasf',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
 
-
     {
       path: '',
+      id: '',
       name: 'Service Request Requets asfasfasf',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
     {
       path: '',
+      id: '',
       name: 'Service Request Requets asfasfasf',
       icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
-    },
-    {
-      path: '',
-      name: 'Service Request Requets asfasfasf',
-      icon: '../../assets/images/billing_payment.svg',
-      type: menuType.link,
+      type: MenuType.link,
     },
   ];
 
