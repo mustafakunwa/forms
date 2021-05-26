@@ -1,11 +1,4 @@
 <app-multi-checkbox [(model)]="checkboxmodel" [form]="form"></app-multi-checkbox>
-
-{{form.value|json}}
-<br><br>
-{{checkboxmodel|json}}
-
 <br><br><br>
 
-<app-checkbox [(model)]="singleCheckbox" [form]="form"></app-checkbox>
-<br><br>
-{{singleCheckbox|json}}
+<app-multi-checkbox [(model)]="singleCheckbox" [form]="form"></app-multi-checkbox>

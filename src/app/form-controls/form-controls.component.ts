@@ -2,7 +2,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import {
   dynamicCheckboxModel,
-  singleCheckboxModel,
 } from '../models/checkbox.model';
 
 @Component({
@@ -12,9 +11,11 @@ import {
 })
 export class FormControlsComponent implements OnInit {
   checkboxmodel: dynamicCheckboxModel = new dynamicCheckboxModel({
+    id:'',
     label: 'Gender',
     formControlName: 'gender',
     value: null,
+    isMultiSelect:true,
     options: [
       {
         formControlName: 'male',
@@ -27,7 +28,8 @@ export class FormControlsComponent implements OnInit {
     ],
   });
 
-  singleCheckbox: singleCheckboxModel = new singleCheckboxModel({
+  singleCheckbox: dynamicCheckboxModel = new dynamicCheckboxModel({
+    id:'',
     label: 'Accept Terms and condition',
     formControlName: 'terms',
   });

@@ -1,13 +1,33 @@
 <div [formGroup]="form">
-  <label>{{ model.label }}</label>
-  <div [formGroupName]="model.formControlName">
-    <div *ngFor="let opt of model.options" class="checkbox">
+  <ng-container *ngIf="model.isMultiSelect">
+    <label>{{ model.label }}</label>
+    <div [formGroupName]="model.formControlName">
+      <div *ngFor="let opt of model.options" class="checkbox">
+        <label>
+          <input
+            [formControlName]="opt.formControlName"
+            type="checkbox"
+            (change)="onInputChange($event, opt.label)"
+          />
+          <span>
+            {{ opt.label }}
+          </span>
+        </label>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container  *ngIf="!model.isMultiSelect">
+    <div class="checkbox" >
       <label>
-        <input [formControlName]="opt.formControlName" type="checkbox" (change)="onInputChange($event,opt.label)" />
+        <input
+          [formControlName]="model.formControlName"
+          type="checkbox"
+          (change)="onInputChange($event)"
+        />
         <span>
-          {{ opt.label }}
+          {{ model.label }}
         </span>
       </label>
     </div>
-  </div>
+  </ng-container>
 </div>

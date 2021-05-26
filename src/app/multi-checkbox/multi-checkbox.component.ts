@@ -12,21 +12,24 @@ export class MultiCheckboxComponent implements OnInit {
   @Input() form: FormGroup | undefined;
   @Input() onBlur: EventEmitter<any> = new EventEmitter();
   @Input() onFocus: EventEmitter<any> = new EventEmitter();
-  @Input() onChange: EventEmitter<any> = new EventEmitter();
   @Input() modelChange: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onInputChange(_event: any, label) {
+  onInputChange(_event: any, label?: string) {
     let value = _event.currentTarget.checked;
-    if (value) {
-      this.model.value.push(label);
+    if (this.model.isMultiSelect) {
+      if (value) {
+        this.model.value.push(label);
+      } else {
+        this.model.value = this.model.value.filter(
+          (checked) => checked !== label
+        );
+      }
     } else {
-      this.model.value = this.model.value.filter(
-        (checked) => checked !== label
-      );
+      this.model.value = value;
     }
     this.modelChange.emit();
   }
