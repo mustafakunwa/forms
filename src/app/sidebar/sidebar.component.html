@@ -7,7 +7,7 @@
   </div>
   <div class="sidebar__content">
     <ul class="sidebar__navbar-lists">
-      <li *ngFor="let menu of menus">
+      <li *ngFor="let menu of menus" [id]="menu.id">
         <div
           class="sidebar__navbar-item"
           *ngIf="menu.type == 'link'"

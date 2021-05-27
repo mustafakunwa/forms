@@ -1,13 +1,14 @@
 <div [formGroup]="form">
   <ng-container *ngIf="model.isMultiSelect">
     <label>{{ model.label }}</label>
-    <div [formGroupName]="model.formControlName">
+    <div [formGroupName]="model.formControlName" [id]="model.id">
       <div *ngFor="let opt of model.options" class="checkbox">
         <label>
           <input
             [formControlName]="opt.formControlName"
             type="checkbox"
             (change)="onInputChange($event, opt.label)"
+            [id]="opt.id"
           />
           <span>
             {{ opt.label }}
@@ -16,13 +17,14 @@
       </div>
     </div>
   </ng-container>
-  <ng-container  *ngIf="!model.isMultiSelect">
-    <div class="checkbox" >
+  <ng-container *ngIf="!model.isMultiSelect">
+    <div class="checkbox">
       <label>
         <input
           [formControlName]="model.formControlName"
           type="checkbox"
           (change)="onInputChange($event)"
+          [id]="model.id"
         />
         <span>
           {{ model.label }}

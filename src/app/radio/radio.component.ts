@@ -1,5 +1,6 @@
 import { FormGroup } from '@angular/forms';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { DynamicRadioModel } from '../models/radio.model';
 
 @Component({
   selector: 'app-radio',
@@ -7,9 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./radio.component.scss'],
 })
 export class RadioComponent implements OnInit {
-  @Input() field: any = {};
+  @Input() model!: DynamicRadioModel;
   @Input() form: FormGroup;
+  @Output() onBlur: EventEmitter<any> = new EventEmitter();
+  @Output() onFocus: EventEmitter<any> = new EventEmitter();
+  @Output() modelChange: EventEmitter<any> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
+  onInputChange(value: any) {
+    this.model.value = value;
+    this.modelChange.emit();
+  }
 }
