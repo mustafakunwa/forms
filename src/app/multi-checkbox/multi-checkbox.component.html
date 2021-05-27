@@ -1,7 +1,7 @@
 <div [formGroup]="form">
   <ng-container *ngIf="model.isMultiSelect">
-    <label>{{ model.label }}</label>
     <div [formGroupName]="model.formControlName" [id]="model.id">
+      <label>{{ model.label }}</label>
       <div *ngFor="let opt of model.options" class="checkbox">
         <label>
           <input
