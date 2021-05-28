@@ -18,10 +18,11 @@ import { DynamicSelectModel } from '../models/select.model';
 export class SelectComponent implements OnInit {
   @Input() model!: DynamicSelectModel;
   @Input() form: FormGroup | undefined;
+  @Input() variant: string = '';
   @Output() onBlur: EventEmitter<any> = new EventEmitter();
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() modelChange: EventEmitter<any> = new EventEmitter();
- 
+
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
   handleOutsideClick(event) {

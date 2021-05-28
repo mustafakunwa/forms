@@ -2,6 +2,7 @@
   <div
     (click)="handleClickOnSelect()"
     class="selectContainer"
+    [class.round]="variant == 'round'"
     [class.selectWrapper__error]="
       form.controls[model.formControlName].touched &&
       form.controls[model.formControlName].invalid

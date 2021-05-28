@@ -133,7 +133,7 @@
 }
 
 .selectWrapper__valid {
-    border-color: $validate-success;
+    // border-color: $validate-success;
 }
 
 
@@ -161,8 +161,9 @@
 .round {
     &.selectContainer {
         display: inline-block;
-        background: #efeff0;
+        background: $bggrey;
         border-radius: 19px;
+        border-color: $b700;
         margin: var(--spacing-s);
         position: relative;
         transition: all 0.3s ease-in-out;
@@ -186,6 +187,10 @@
         }
         .optionList {
             width: 100%;
+            left: 0;
+        }
+        .label{
+            display: none;
         }
     }
 }
