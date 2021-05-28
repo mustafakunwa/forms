@@ -2,6 +2,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { DynamicCheckboxModel } from '../models/checkbox.model';
 import { DynamicRadioModel } from '../models/radio.model';
+import { DynamicSelectModel } from '../models/select.model';
 
 @Component({
   selector: 'app-form-controls',
@@ -20,6 +21,7 @@ export class FormControlsComponent implements OnInit {
         formControlName: 'india',
         label: 'India',
         id: 'india',
+        disabled: true,
       },
       {
         formControlName: 'dubai',
@@ -40,9 +42,38 @@ export class FormControlsComponent implements OnInit {
     label: 'Gender',
     id: '',
     options: [
-      { label: 'Male', value: 'male', id: 'male' },
+      { label: 'Male', value: 'male', id: 'male', disabled: true },
       { label: 'Female', value: 'female', id: 'female' },
     ],
+  });
+
+  selectElement: DynamicSelectModel = new DynamicSelectModel({
+    id: 'select_country',
+    label: 'Country',
+    options: [
+      {
+        id: 'india',
+        label: 'India',
+        value: 'india',
+      },
+      {
+        id: 'uae',
+        label: 'UAE',
+        value: 'uae',
+      },
+      {
+        id: 'usa',
+        label: 'USA',
+        value: 'usa',
+        
+      },
+      {
+        id: 'nepal',
+        label: 'Nepal',
+        value: 'nepal',
+      },
+    ],
+    formControlName: 'selectCountry',
   });
   form: FormGroup;
 
@@ -56,6 +87,7 @@ export class FormControlsComponent implements OnInit {
       }),
       terms: this.fb.control(false),
       gender: this.fb.control(''),
+      selectCountry: this.fb.control(''),
     });
   }
 }

@@ -9,6 +9,7 @@
         (change)="onInputChange(opt.value)"
         (blur)="onBlur.emit($event)"
         (focus)="onFocus.emit($event)"
+        [attr.disabled]="model.disabled || opt.disabled"
         [id]="opt.id"
       />
       <span>

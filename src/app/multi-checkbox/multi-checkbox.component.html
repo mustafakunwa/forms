@@ -10,6 +10,7 @@
             (change)="onInputChange($event, opt.label)"
             (blur)="onBlur.emit($event)"
             (focus)="onFocus.emit($event)"
+            [attr.disabled]="model.disabled || opt.disabled"
             [id]="opt.id"
           />
           <span>
@@ -26,6 +27,7 @@
           [formControlName]="model.formControlName"
           type="checkbox"
           (change)="onInputChange($event)"
+          [attr.disabled]="model.disabled"
           [id]="model.id"
         />
         <span>

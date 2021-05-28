@@ -120,7 +120,7 @@
         }
 
         &:hover {
-            > input {
+            > input:not(:disabled) {
                 opacity: 0.08;
 
                 &:focus {

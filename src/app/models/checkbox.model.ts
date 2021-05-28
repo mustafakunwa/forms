@@ -6,7 +6,8 @@ export interface DynamicCheckboxModelConfig
   label: string;
   options?: Option[];
   isMultiSelect?: boolean;
-  value?:any;
+  value?: any;
+  disabled?: boolean;
 }
 
 export class DynamicCheckboxModel extends DynamicFormModel<any> {
@@ -15,6 +16,7 @@ export class DynamicCheckboxModel extends DynamicFormModel<any> {
   options?: Option[];
   value?: any;
   isMultiSelect?: boolean;
+  disabled?: boolean;
 
   constructor(object: DynamicCheckboxModelConfig) {
     super(object);
@@ -25,6 +27,7 @@ export class DynamicCheckboxModel extends DynamicFormModel<any> {
     this.value = object.isMultiSelect
       ? object.value || []
       : object.value || false;
+    this.disabled = object.disabled || undefined;
   }
 }
 
@@ -34,6 +37,7 @@ export class Option {
   formControlName?: string;
   checked?: boolean;
   id: string;
+  disabled?: boolean;
 
   constructor(object: Option) {
     this.id = object.id;
@@ -41,5 +45,6 @@ export class Option {
     this.value = object.value || false;
     this.formControlName = object.formControlName || '';
     this.checked = object.checked || undefined;
+    this.disabled = object.disabled || undefined;
   }
 }

@@ -24,7 +24,7 @@ import { FormControlsComponent } from './form-controls/form-controls.component';
 import { UIComponent } from './ui/ui.component';
 import { MultiCheckboxModule } from './multi-checkbox/multi-checkbox.module';
 import { RadioModule } from './radio/radio.module';
-// import { SidebarService } from './sidebar/sidebar.service';
+import { SelectModule } from './select/select.module';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import { RadioModule } from './radio/radio.module';
     DialogModule,
     MultiCheckboxModule,
     RadioModule,
+    SelectModule 
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

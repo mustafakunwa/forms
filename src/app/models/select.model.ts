@@ -1,6 +1,6 @@
 import { DynamicFormModel, DynamicFormModelConfig } from './form.model';
 
-export interface DynamicRadioModelConfig extends DynamicFormModelConfig<any> {
+export interface DynamicSelectConfig extends DynamicFormModelConfig<any> {
   id: string;
   label: string;
   options: Option[];
@@ -8,14 +8,14 @@ export interface DynamicRadioModelConfig extends DynamicFormModelConfig<any> {
   disabled?: boolean;
 }
 
-export class DynamicRadioModel extends DynamicFormModel<any> {
+export class DynamicSelectModel extends DynamicFormModel<any> {
   id: string;
   label: string;
   options: Option[];
   value?: string;
   disabled?: boolean;
 
-  constructor(object: DynamicRadioModelConfig) {
+  constructor(object: DynamicSelectConfig) {
     super(object);
     this.id = object.id || '';
     this.label = object.label || '';
@@ -26,9 +26,9 @@ export class DynamicRadioModel extends DynamicFormModel<any> {
 }
 
 export class Option {
+  id: string;
   label: string;
   value: string;
-  id: string;
   disabled?: boolean;
 
   constructor(object: Option) {
