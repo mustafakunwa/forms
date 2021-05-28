@@ -6,7 +6,7 @@ export interface DynamicCheckboxModelConfig
   label: string;
   options?: Option[];
   isMultiSelect?: boolean;
-  value?: string[] | boolean;
+  value?:any;
 }
 
 export class DynamicCheckboxModel extends DynamicFormModel<any> {
