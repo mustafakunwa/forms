@@ -1,0 +1,191 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/grid";
+@import "../../assets/scss/iot/mixins/arrows";
+
+.selectContainer {
+    position: relative;
+    font-size: 16px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid $lightgrey;
+    border-radius: 4px;
+    padding: 12px 0;
+    color: $black;
+    transition: 0.1s ease-out;
+    height: 48px;
+    width: 100%;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        @include arrow($grey, 2, 3, down);
+    }
+
+    &:hover {
+        border-color: $functionary-color1;
+    }
+
+    &:focus {
+        border: 2px solid $functionary-color1;
+    }
+
+    &:focus + .label {
+        color: $functionary-color1;
+        top: 0;
+        transform: translateY(-30%) scale(0.75);
+    }
+
+    &:not(:placeholder-shown) + .label {
+        top: 0;
+        transform: translateY(-30%) scale(0.75);
+    }
+
+    .label {
+        position: absolute;
+        font-size: 16px;
+        left: 0;
+        top: 22px;
+        transform: translateY(-50%);
+        background-color: $white;
+        color: $grey;
+        padding: 0 4px;
+        margin: 0 10px;
+        transition: 0.1s ease-out;
+        transform-origin: left top;
+        pointer-events: none;
+        width: calc(100% - 32px);
+
+        &.labelUp {
+            position: absolute;
+            font-size: 16px;
+            left: 0;
+            top: 0;
+            width: auto;
+            transform: translateY(-40%) scale(0.75);
+            background-color: $white;
+            padding: 0 4px;
+            margin: 0 10px;
+            transition: 0.1s ease-out;
+            transform-origin: left top;
+            pointer-events: none;
+        }
+    }
+
+    .select {
+        .span {
+            padding: 0 16px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: calc(100% - 20px);
+            display: block;
+            overflow: hidden;
+        }
+
+        .placeholder {
+            padding: 0 16px;
+            color: $grey;
+        }
+    }
+
+    .optionList {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+        z-index: 99;
+        position: absolute;
+        background: $white;
+        box-shadow: 0px 0px 10px rgba(183, 192, 206, 0.3);
+        max-height: 210px;
+        overflow-y: auto;
+        width: 100%;
+
+        .option {
+            width: calc(100% - 48px);
+            padding: 16px 0;
+            margin: 0 24px;
+            transition: all ease-in-out 0.3s;
+            &:hover {
+                color: $primary-color1;
+                padding: 16px 0 16px 12px;
+                position: relative;
+                transition: all ease-in-out 0.3s;
+
+                &::before {
+                    background: $primary-color1;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 24px;
+                }
+            }
+        }
+    }
+}
+
+.selectWrapper__error {
+    border-color: $validate-error;
+}
+
+.selectWrapper__valid {
+    border-color: $validate-success;
+}
+
+
+
+.selectErrorContainer {
+    margin-top: 4px;
+    font-size: 12px;
+    position: relative;
+    width: 100%;
+
+    .errorMsg {
+        font: inherit;
+        color: $validate-error;
+        font-weight: 600;
+        display: block;
+        margin-left: auto;
+        padding: 0 16px;
+    }
+}
+
+.selectWrapper {
+    margin-bottom: 24px;
+}
+
+.round {
+    &.selectContainer {
+        display: inline-block;
+        background: #efeff0;
+        border-radius: 19px;
+        margin: var(--spacing-s);
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        margin-left: 0;
+        height: 34px;
+        padding: 8px;
+        font-size: 14px;
+        color: #000;
+        @media #{$small-down} {
+            width: 100%;
+        }
+        .span {
+            margin-right: 20px;
+        }
+        &::after {
+            top: 10px;
+        }
+        .placeholder {
+            padding-left: 0;
+        }
+        .optionList {
+            width: 100%;
+        }
+    }
+}

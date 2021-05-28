@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { DynamicCheckboxModel } from '../models/checkbox.model';
 import { DynamicRadioModel } from '../models/radio.model';
@@ -87,7 +87,7 @@ export class FormControlsComponent implements OnInit {
       }),
       terms: this.fb.control(false),
       gender: this.fb.control(''),
-      selectCountry: this.fb.control(''),
+      selectCountry: this.fb.control('',[Validators.required]),
     });
   }
 }

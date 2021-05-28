@@ -1,17 +1,31 @@
-<div class="select" [formGroup]="form">
-  <select
-    class="select-text"
-    [formControlName]="model.formControlName"
-    [attr.disabled]="model.disabled"
+<div class="selectWrapper">
+  <div
+    (click)="handleClickOnSelect()"
+    class="selectContainer"
+    [class.selectWrapper__error]="
+      form.controls[model.formControlName].touched &&
+      form.controls[model.formControlName].invalid
+    "
+    [class.selectWrapper__valid]="
+      form.controls[model.formControlName].touched &&
+      form.controls[model.formControlName].valid
+    "
   >
-    <option
-      *ngFor="let opt of model.options"
-      [value]="opt.value"
-      [attr.disabled]="opt.disabled"
-      class="select-option"
-    >
-      {{ opt.label }}
-    </option>
-  </select>
-  <label class="select-label">{{ model.label || "" }}</label>
+    <div class="select">
+      <span class="span" *ngIf="model.value">{{ selectedObject?.label }}</span>
+      <span class="placeholder" *ngIf="!model.value">{{ model.label }}</span>
+      <ul class="optionList" *ngIf="isOpen">
+        <li
+          *ngFor="let option of model.options"
+          class="option"
+          (click)="handleClickOnOption(option)"
+        >
+          {{ option.label }}
+        </li>
+      </ul>
+    </div>
+    <label [class.labelUp]="this.model.value" class="label">{{
+      model.label
+    }}</label>
+  </div>
 </div>

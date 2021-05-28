@@ -25,6 +25,7 @@ import { UIComponent } from './ui/ui.component';
 import { MultiCheckboxModule } from './multi-checkbox/multi-checkbox.module';
 import { RadioModule } from './radio/radio.module';
 import { SelectModule } from './select/select.module';
+import { MultiSelectModule } from './multi-select/multi-select.module';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SelectModule } from './select/select.module';
     DialogModule,
     MultiCheckboxModule,
     RadioModule,
-    SelectModule 
+    SelectModule,
+    MultiSelectModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],
