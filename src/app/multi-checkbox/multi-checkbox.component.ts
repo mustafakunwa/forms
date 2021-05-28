@@ -39,6 +39,6 @@ export class MultiCheckboxComponent implements OnInit {
     } else {
       this.model.value = value;
     }
-    this.modelChange.emit();
+    this.modelChange.emit(this.model);
   }
 }

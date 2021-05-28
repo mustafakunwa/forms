@@ -7,6 +7,8 @@
         [value]="opt.value"
         [formControlName]="model.formControlName"
         (change)="onInputChange(opt.value)"
+        (blur)="onBlur.emit($event)"
+        (focus)="onFocus.emit($event)"
         [id]="opt.id"
       />
       <span>

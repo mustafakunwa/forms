@@ -8,6 +8,8 @@
             [formControlName]="opt.formControlName"
             type="checkbox"
             (change)="onInputChange($event, opt.label)"
+            (blur)="onBlur.emit($event)"
+            (focus)="onFocus.emit($event)"
             [id]="opt.id"
           />
           <span>

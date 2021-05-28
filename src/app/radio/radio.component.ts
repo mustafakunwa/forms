@@ -19,6 +19,6 @@ export class RadioComponent implements OnInit {
   ngOnInit(): void {}
   onInputChange(value: any) {
     this.model.value = value;
-    this.modelChange.emit();
+    this.modelChange.emit(this.model);
   }
 }
