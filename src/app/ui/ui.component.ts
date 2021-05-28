@@ -3,6 +3,9 @@ import { GlobalSearchComponent } from '../global-search/global-search.component'
 import { actionButton, buttonFormat, buttonType } from '../button.model';
 import { DialogService } from '../dialog/dialog.service';
 import { DialogComponentComponent } from '../dialog-component/dialog-component.component';
+import { SidebarService } from '../sidebar/sidebar.service';
+import { MenuType, Menu } from '../sidebar/menu.model';
+
 @Component({
   selector: 'app-ui',
   templateUrl: './ui.component.html',
@@ -112,9 +115,96 @@ export class UIComponent implements OnInit {
     type: buttonType.button,
   });
 
-  constructor(private dialog: DialogService) {}
+  menus: Menu[] = [
+    {
+      path: '',
+      id: '',
+      name: 'Dashboard',
+      icon: '../../assets/images/dashboard.svg',
+      type: MenuType.link,
+    },
+    {
+      path: '',
+      id: '',
+      name: 'Billing Payment',
+      icon: '../../assets/images/billing_payment.svg',
+      type: MenuType.link,
+    },
+    {
+      path: '',
+      id: '',
+      name: 'Circuit',
+      icon: '../../assets/images/dashboard.svg',
+      type: MenuType.link,
+    },
+    {
+      path: '',
+      id: '',
+      name: 'Service Request',
+      icon: '../../assets/images/billing_payment.svg',
+      type: MenuType.link,
+    },
+    {
+      name: 'Help Support',
+      id: '',
+      type: MenuType.short,
+    },
+    {
+      name: 'Service Child ',
+      id: '',
+      icon: '../../assets/images/billing_payment.svg',
+      type: MenuType.childlink,
+      children: [
+        {
+          path: '',
+          id: '',
+          name: 'Service Request',
+          icon: '../../assets/images/billing_payment.svg',
+          type: MenuType.link,
+        },
+        {
+          path: '',
+          id: '',
+          name: 'Service Request',
+          icon: '../../assets/images/billing_payment.svg',
+          type: MenuType.link,
+        },
+      ],
+    },
+    {
+      path: '',
+      id: '',
+      name: 'Value Added Service',
+      icon: '../../assets/images/billing_payment.svg',
+      type: MenuType.link,
+    },
 
-  ngOnInit() {}
+    {
+      path: '',
+      id: '',
+      name: 'Service Request Requets asfasfasf',
+      icon: '../../assets/images/billing_payment.svg',
+      type: MenuType.link,
+    },
+    {
+      path: '',
+      id: '',
+      name: 'Service Request Requets asfasfasf',
+      icon: '../../assets/images/billing_payment.svg',
+      type: MenuType.link,
+    },
+  ];
+
+  constructor(
+    private dialog: DialogService,
+    private sidebarService: SidebarService
+  ) {}
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.sidebarService.updateMenu(this.menus);
+    }, 5000);
+  }
   getFields() {
     return this.fields;
   }

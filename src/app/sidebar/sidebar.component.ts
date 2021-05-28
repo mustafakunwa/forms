@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu, MenuType } from './menu.model';
+import { SidebarService } from './sidebar.service';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -18,111 +20,13 @@ export class SidebarComponent implements OnInit {
 
   isActive: string = 'Dashboard';
 
-  menus: Menu[] = [
-    {
-      path: '',
-      id: '',
-      name: 'Dashboard',
-      icon: '../../assets/images/dashboard.svg',
-      type: MenuType.link,
-    },
-    {
-      path: '',
-      id: '',
-      name: 'Billing Payment',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-    {
-      path: '',
-      id: '',
-      name: 'Circuit',
-      icon: '../../assets/images/dashboard.svg',
-      type: MenuType.link,
-    },
-    {
-      path: '',
-      id: '',
-      name: 'Service Request',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-    {
-      name: 'Help Support',
-      id: '',
-      type: MenuType.short,
-    },
-    {
-      name: 'Service Child ',
-      id: '',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.childlink,
-      children: [
-        {
-          path: '',
-          id: '',
-          name: 'Service Request',
-          icon: '../../assets/images/billing_payment.svg',
-          type: MenuType.link,
-        },
-        {
-          path: '',
-          id: '',
-          name: 'Service Request',
-          icon: '../../assets/images/billing_payment.svg',
-          type: MenuType.link,
-        },
-      ],
-    },
-    {
-      path: '',
-      id: '',
-      name: 'Value Added Service',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
+  menus: Menu[] = [];
 
-    {
-      path: '',
-      id: '',
-      name: 'Service Request Requets asfasfasf',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-
-    {
-      path: '',
-      id: '',
-      name: 'Service Request Requets asfasfasf',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-
-    {
-      path: '',
-      id: '',
-      name: 'Service Request Requets asfasfasf',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-
-    {
-      path: '',
-      id: '',
-      name: 'Service Request Requets asfasfasf',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-    {
-      path: '',
-      id: '',
-      name: 'Service Request Requets asfasfasf',
-      icon: '../../assets/images/billing_payment.svg',
-      type: MenuType.link,
-    },
-  ];
-
-  constructor() {}
+  constructor(private sidebarService: SidebarService) {
+    this.sidebarService.getMenu().subscribe((res) => {
+      this.menus = res;
+    });
+  }
 
   mouseover(event, name) {
     var { top, left, height, width } =
