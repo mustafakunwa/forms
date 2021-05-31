@@ -230,4 +230,9 @@ export class UIComponent implements OnInit {
 
     dialogIns?.afterClosed.subscribe((res) => {});
   }
+
+  card:boolean=false;
+  valueChange(event){
+    this.card=event.currentTarget.checked
+  }
 }

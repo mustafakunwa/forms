@@ -28,14 +28,14 @@
             transition: opacity 0.3s, transform 0.2s;
 
             &:checked {
-                background-color: $primary-color1;
+                background-color: $functionary-color1;
 
                 + {
                     span {
                         color: $black;
 
                         &::before {
-                            border-color: $primary-color1;
+                            border-color: $functionary-color1;
                         }
 
                         &::after {
@@ -57,7 +57,7 @@
                 + {
                     span {
                         &::before {
-                            border-color: $primary-color1;
+                            border-color: $functionary-color1;
                         }
                     }
                 }
@@ -113,7 +113,7 @@
                 border-radius: 50%;
                 width: 8px;
                 height: 8px;
-                background-color: $primary-color1;
+                background-color: $functionary-color1;
                 transform: translate(5px, 5px) scale(0);
                 transition: transform 0.2s;
             }

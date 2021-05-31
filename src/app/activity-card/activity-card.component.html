@@ -1,5 +1,7 @@
-<div class="activityCard">
-  
- 
+<div
+  class="activityCard list"
+  [class.disable]="!show"
+  [class.enable]="show"
+>
   <ng-content></ng-content>
 </div>

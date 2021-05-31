@@ -21,7 +21,6 @@ export class FormControlsComponent implements OnInit {
         formControlName: 'india',
         label: 'India',
         id: 'india',
-        disabled: true,
       },
       {
         formControlName: 'dubai',
@@ -42,7 +41,7 @@ export class FormControlsComponent implements OnInit {
     label: 'Gender',
     id: '',
     options: [
-      { label: 'Male', value: 'male', id: 'male', disabled: true },
+      { label: 'Male', value: 'male', id: 'male' },
       { label: 'Female', value: 'female', id: 'female' },
     ],
   });
@@ -65,7 +64,6 @@ export class FormControlsComponent implements OnInit {
         id: 'usa',
         label: 'USA',
         value: 'usa',
-        
       },
       {
         id: 'nepal',
@@ -87,7 +85,9 @@ export class FormControlsComponent implements OnInit {
       }),
       terms: this.fb.control(false),
       gender: this.fb.control(''),
-      selectCountry: this.fb.control('',[Validators.required]),
+      selectCountry: this.fb.control({ value: '' }, [Validators.required]),
     });
   }
+
+
 }

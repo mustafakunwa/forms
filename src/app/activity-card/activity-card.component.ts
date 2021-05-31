@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-activity-card',
   templateUrl: './activity-card.component.html',
-  styleUrls: ['./activity-card.component.scss']
+  styleUrls: ['./activity-card.component.scss'],
 })
 export class ActivityCardComponent implements OnInit {
+  @Input() show: boolean;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

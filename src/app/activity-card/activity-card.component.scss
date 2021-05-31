@@ -5,7 +5,21 @@
     max-width: 400px;
     overflow: visible;
     box-shadow: $shadow600;
-    animation: fadeIn ease 1s;
+    transition: transform ease-in 0.4s;
     border-radius: 12px;
-    margin: 50px auto 0 auto ; 
+    margin: 50px auto 0 auto;
+
+    &.list {
+        transform: perspective(170px) rotateX(-5deg);
+        transform-origin: top center;
+    }
+    &.enable {
+        transform: perspective(0) translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+    &.disable {
+        visibility: hidden;
+        opacity: 0;
+    }
 }

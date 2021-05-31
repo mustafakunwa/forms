@@ -50,7 +50,10 @@ export class SelectComponent implements OnInit {
   }
 
   handleClickOnSelect() {
-    if (!this.model.disabled) {
+    if (
+      !this.model.disabled &&
+      !this.form.controls[this.model.formControlName].disabled
+    ) {
       this.isOpen = !this.isOpen;
       this.form.controls[this.model.formControlName].markAsTouched();
     }

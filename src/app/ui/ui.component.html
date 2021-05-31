@@ -1,31 +1,95 @@
 <div style="display: flex">
   <app-sidebar></app-sidebar>
 
-  <div style="background-color: black; padding: 10px 50px; margin: 10px;width: 100%;">
-    <app-global-search
-      debounceTime="300"
-      [searchResults]="searchResults"
-      [loading]="loading"
-      minLength="3"
-      (getsearchResults)="getsearchResults()"
-      placholder="Search Basket | MSISDN | SIM Number"
-    >
-      <ng-container *ngIf="searchResults.length && !loading">
-        <div class="search__result-suggestion">Search Suggestion</div>
-        <div
-          *ngFor="let result of searchResults | slice: 0:3"
-          class="search__result-item"
-          (click)="routeTo(result)"
-        >
-          <div class="search__result-image">
-            <img src="../../assets/images/search.svg" class="search__img" />
+  <div style="display: flex; flex-direction: column; width: 100%">
+    <div style="background-color: black; padding: 10px 50px;">
+      <app-global-search
+        debounceTime="300"
+        [searchResults]="searchResults"
+        [loading]="loading"
+        minLength="3"
+        (getsearchResults)="getsearchResults()"
+        placholder="Search Basket | MSISDN | SIM Number"
+      >
+        <ng-container *ngIf="searchResults.length && !loading">
+          <div class="search__result-suggestion">Search Suggestion</div>
+          <div
+            *ngFor="let result of searchResults | slice: 0:3"
+            class="search__result-item"
+            (click)="routeTo(result)"
+          >
+            <div class="search__result-image">
+              <img src="../../assets/images/search.svg" class="search__img" />
+            </div>
+            <div class="search__result-name">
+              <span class="search__result-id">{{ result.BASKET_ID }}</span>
+              <span class="search__result-number"> {{ result.Name }}</span>
+            </div>
           </div>
-          <div class="search__result-name">
-            <span class="search__result-id">{{ result.BASKET_ID }}</span>
-            <span class="search__result-number"> {{ result.Name }}</span>
+        </ng-container>
+      </app-global-search>
+    </div>
+
+    <input type="checkbox" (change)="valueChange($event)">
+
+    <app-activity-card [show]="card">
+      <app-activity-header color="black">
+        <div class="header">
+          <app-profile [styles]="{ height: '65px', width: '65px' }">
+            <img src="../assets/o-2.png" />
+          </app-profile>
+          <div class="header__description">
+            <h1>Baljeet Singh</h1>
+            <p class="header__description-text">
+              Admin [Last login - Today 9:00am]
+            </p>
           </div>
         </div>
-      </ng-container>
-    </app-global-search>
+      </app-activity-header>
+      <app-activity-body>
+        <div class="profile__body">
+          <div class="profile__manage">
+            <div class="profile__manage-name">
+              Manage Account <img src="../assets/images/Vector.png" />
+            </div>
+            <p>
+              You can change your password, add user and edit personal details
+              here.
+            </p>
+          </div>
+          <div class="profile__button">Change Password</div>
+          <div class="profile__button">View All Activity</div>
+          <div class="profile__plan">
+            <div class="profile__plan-name">
+              Subscription Plans <img src="../assets/images/Vector.png" />
+            </div>
+            <p>One stop shop for all the subscriptions and history.</p>
+            <div class="profile__plan-centers">
+              <div class="profile__plan-center">
+                <div class="profile__plan-img">
+                  <img src="../assets/images/message.png" />
+                </div>
+                <p>Message Center</p>
+              </div>
+              <div class="profile__plan-center">
+                <div class="profile__plan-img">
+                  <img src="../assets/images/message.png" />
+                </div>
+                <p>Location Center</p>
+              </div>
+              <div class="profile__plan-center">
+                <div class="profile__plan-img">
+                  <img src="../assets/images/message.png" />
+                </div>
+                <p>Anything New</p>
+              </div>
+            </div>
+          </div>
+          <div class="profile__logout">
+            Are you done for today, <a>&#160;Logout</a>
+          </div>
+        </div>
+      </app-activity-body>
+    </app-activity-card>
   </div>
 </div>

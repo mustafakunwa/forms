@@ -68,13 +68,13 @@
         /* Checked, Indeterminate */
         input[type="checkbox"]:checked,
         input[type="checkbox"]:indeterminate {
-            background-color: $primary-color1;
+            background-color: $functionary-color1;
         }
 
         input[type="checkbox"]:checked + span::before,
         input[type="checkbox"]:indeterminate + span::before {
-            border-color: $primary-color1;
-            background-color: $primary-color1;
+            border-color: $functionary-color1;
+            background-color:$functionary-color1;
             color: $black;
         }
 
@@ -114,7 +114,7 @@
         }
 
         & > input:active + span::before {
-            border-color: $primary-color1;
+            border-color: $functionary-color1;
         }
 
         & > input:checked:active + span::before {
