@@ -1,3 +1,4 @@
+import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SelectComponent } from './select.component';
 import { DynamicSelectModel } from '../models/select.model';
@@ -49,5 +50,29 @@ describe('SelectComponent', () => {
       selectCountry: new FormControl(''),
     });
     fixture.detectChanges();
+  });
+
+  it('List should not be opened', () => {
+    let list = fixture.debugElement.query(By.css('.optionList'));
+    expect(list).toBe(null);
+  });
+
+  it('List should be open', () => {
+    fixture.debugElement
+      .query(By.css('.selectContainer'))
+      .nativeElement.click();
+    fixture.detectChanges();
+    let list = fixture.debugElement.query(By.css('.optionList')).nativeElement;
+    expect(list).not.toBe(null);
+  });
+
+  it('should select value', () => {
+    fixture.debugElement
+      .query(By.css('.selectContainer'))
+      .nativeElement.click();
+    fixture.detectChanges();
+    fixture.debugElement.query(By.css('#india')).nativeElement.click();
+    fixture.detectChanges();
+    expect(component.model.value).toBe('india')
   });
 });
