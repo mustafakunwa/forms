@@ -1,0 +1,178 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/grid";
+@import "../../assets/scss/iot/mixins/arrows";
+
+.multiSelectContainer {
+  position: relative;
+  font-size: 16px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid $lightgrey;
+  border-radius: 4px;
+  padding: 16px 0;
+  color: $black;
+  transition: 0.1s ease-out;
+  height: 48px;
+  width: 100%;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    @include arrow($grey, 2, 3, down);
+  }
+
+  &:hover {
+    border-color: $functionary-color1;
+  }
+
+  &:focus {
+    border: 2px solid $functionary-color1;
+  }
+
+  &:focus + .label {
+    color: $functionary-color1;
+    top: 0;
+    transform: translateY(-30%) scale(0.75);
+  }
+
+  &:not(:placeholder-shown) + .label {
+    top: 0;
+    transform: translateY(-30%) scale(0.75);
+  }
+
+  .label {
+    position: absolute;
+    font-size: 16px;
+    left: 0;
+    top: 22px;
+    transform: translateY(-50%);
+    background-color: $white;
+    color: $grey;
+    padding: 0 4px;
+    margin: 0 10px;
+    transition: 0.1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+    width: calc(100% - 32px);
+
+    &.labelUp {
+      position: absolute;
+      font-size: 16px;
+      left: 0;
+      top: 0;
+      width: auto;
+      transform: translateY(-40%) scale(0.75);
+      background-color: $white;
+      padding: 0 4px;
+      margin: 0 10px;
+      transition: 0.1s ease-out;
+      transform-origin: left top;
+      pointer-events: none;
+    }
+  }
+
+  .multiSelect {
+    .selectedOption {
+      padding: 0 var(--spacing-l) 0 0px;
+
+      list-style: none;
+      margin: -8px 37px 0 12px;
+      height: 32px;
+
+      display: flex;
+      flex-direction: row;
+      /* Below sets up your display method: flex-start|flex-end|space-between|space-around */
+      justify-content: flex-start;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      overflow: scroll;
+      white-space: nowrap;
+
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .chips {
+        padding: var(--spacing-s) var(--spacing-m);
+        border-radius: 20px;
+        background: $lightgrey;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0 var(--spacing-s) 0 0;
+        display: inline;
+      }
+    }
+
+    .placeholder {
+      padding: 0 16px;
+      color: $grey;
+    }
+  }
+
+  .optionList {
+    position: absolute;
+    // top: calc(100% + 1px);
+    margin: 12px 0 0;
+    background: $white;
+    padding: 10px 16px;
+    width: 100%;
+    z-index: 11;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(183, 192, 206, 0.3);
+    list-style: none;
+    max-height: 210px;
+    overflow-y: scroll;
+    // left: 0;
+    // white-space: nowrap;
+    .option {
+      padding: 13px 0;
+      border-bottom: 1px solid $bggrey;
+      &.selected {
+        padding-left: 12px;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: $primary-color1;
+          left: 0;
+          top: calc(50% - 2px);
+        }
+      }
+      .checkboxContent {
+        overflow: hidden;
+        width: calc(100% - 18px);
+      }
+    }
+  }
+}
+
+.error {
+  border-color: $primary-color1;
+}
+
+.multiSelectErrorContainer {
+  margin-top: 4px;
+  font-size: 12px;
+  position: relative;
+  width: 100%;
+
+  .errorMsg {
+    font: inherit;
+    color: $primary-color1;
+    font-weight: 600;
+    display: block;
+    margin-left: auto;
+    padding: 0 16px;
+  }
+}
+
+.multiSelectWrapper {
+  margin-bottom: 24px;
+}

@@ -1,0 +1,37 @@
+<div class="multiSelectWrapper">
+  <div
+    (click)="handleClickOnSelect()"
+    class="multiSelectContainer"
+    [id]="model.id"
+  >
+    <div class="multiSelect">
+      <ul class="selectedOption" *ngIf="model.value.length!=0">
+        <li class="chips" key="{index}" *ngFor="let selected of model.value">
+          {{ displayExtendedOption(selected) }}
+        </li>
+      </ul>
+      <span class="placeholder" *ngIf="model.value.length==0">{{ model.label }}</span>
+    </div>
+
+    <ul class="optionList" *ngIf="isOpen">
+      <li
+        class="option"
+        *ngFor="let option of model.options"
+        (click)="handleClickOnOption($event, option)"
+      >
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [id]="option.id" [checked]="isChecked(option)"/>
+            <span>
+              {{ option.label }}
+            </span>
+          </label>
+        </div>
+      </li>
+    </ul>
+
+    <label [class.labelUp]="model.value.length!=0" class="label">{{
+      model.label
+    }}</label>
+  </div>
+</div>

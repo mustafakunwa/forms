@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DynamicCheckboxModel } from '../models/checkbox.model';
 import { DynamicRadioModel } from '../models/radio.model';
 import { DynamicSelectModel } from '../models/select.model';
+import { DynamicMultiSelectModel } from '../models/multi-select.model';
 
 @Component({
   selector: 'app-form-controls',
@@ -73,6 +74,34 @@ export class FormControlsComponent implements OnInit {
     ],
     formControlName: 'selectCountry',
   });
+
+  multiselectElement: DynamicMultiSelectModel = new DynamicMultiSelectModel({
+    id: 'select_country_multiple',
+    label: 'Country',
+    options: [
+      {
+        id: 'india',
+        label: 'India',
+        value: 'india',
+      },
+      {
+        id: 'uae',
+        label: 'UAE',
+        value: 'uae',
+      },
+      {
+        id: 'usa',
+        label: 'USA',
+        value: 'usa',
+      },
+      {
+        id: 'nepal',
+        label: 'Nepal',
+        value: 'nepal',
+      },
+    ],
+    formControlName: 'selectCountryMulti',
+  });
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -86,8 +115,7 @@ export class FormControlsComponent implements OnInit {
       terms: this.fb.control(false),
       gender: this.fb.control(''),
       selectCountry: this.fb.control({ value: '' }, [Validators.required]),
+      selectCountryMulti: this.fb.control([]),
     });
   }
-
-
 }
