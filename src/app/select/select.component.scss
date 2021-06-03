@@ -133,10 +133,8 @@
 }
 
 .selectWrapper__valid {
-    // border-color: $validate-success;
+    border-color: $validate-success;
 }
-
-
 
 .selectErrorContainer {
     margin-top: 4px;
@@ -189,7 +187,7 @@
             width: 100%;
             left: 0;
         }
-        .label{
+        .label {
             display: none;
         }
     }

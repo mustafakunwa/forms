@@ -114,8 +114,8 @@ export class FormControlsComponent implements OnInit {
       }),
       terms: this.fb.control(false),
       gender: this.fb.control(''),
-      selectCountry: this.fb.control({ value: '' }, [Validators.required]),
-      selectCountryMulti: this.fb.control([]),
+      selectCountry: this.fb.control(null, [Validators.required]),
+      selectCountryMulti: this.fb.control([],[Validators.required]),
     });
   }
 }

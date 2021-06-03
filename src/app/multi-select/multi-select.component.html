@@ -2,6 +2,15 @@
   <div
     (click)="handleClickOnSelect()"
     class="multiSelectContainer"
+
+    [class.multiSelectWrapper__error]="
+      form.controls[model.formControlName].touched &&
+      form.controls[model.formControlName].invalid
+    "
+    [class.multiSelectWrapper__valid]="
+      form.controls[model.formControlName].touched &&
+      form.controls[model.formControlName].valid
+    "
     [id]="model.id"
   >
     <div class="multiSelect">
@@ -16,6 +25,7 @@
     <ul class="optionList" *ngIf="isOpen">
       <li
         class="option"
+        [id]="option.id"
         *ngFor="let option of model.options"
         (click)="handleClickOnOption($event, option)"
       >

@@ -29,12 +29,10 @@ export class Option {
   id: string;
   label: string;
   value: string;
-  disabled?: boolean;
   
   constructor(object: Option) {
     this.id = object.id || '';
     this.label = object.label || '';
     this.value = object.value || '';
-    this.disabled = object.disabled || undefined;
   }
 }
