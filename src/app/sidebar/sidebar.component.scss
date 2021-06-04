@@ -51,6 +51,28 @@
       transition: all 0.4s ease-in-out;
       cursor: pointer;
       padding: var(--spacing-l) 26px;
+      overflow: hidden;
+      position: relative;
+
+      &:active span {
+        opacity: 1;
+        transform: translate(-50%, 50%);
+        transition:initial
+      }
+
+      span {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        width: 35px;
+        height: 35px;
+        transform: scale(5.55556);
+        pointer-events: none;
+        left: 47px;
+        top: 29px;
+        transition: all 1000ms ease 0s;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
     }
   }
   &__content {
