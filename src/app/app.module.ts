@@ -26,6 +26,8 @@ import { MultiCheckboxModule } from './multi-checkbox/multi-checkbox.module';
 import { RadioModule } from './radio/radio.module';
 import { SelectModule } from './select/select.module';
 import { MultiSelectModule } from './multi-select/multi-select.module';
+import { PopUpModule } from './pop-up/pop-up.module';
+import { Sprint6Component } from './sprint6/sprint6.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { MultiSelectModule } from './multi-select/multi-select.module';
     SidebarComponent,
     FormControlsComponent,
     UIComponent,
+    Sprint6Component,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { MultiSelectModule } from './multi-select/multi-select.module';
     RadioModule,
     SelectModule,
     MultiSelectModule,
+    PopUpModule 
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

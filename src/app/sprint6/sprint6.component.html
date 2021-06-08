@@ -1,0 +1,15 @@
+<!-- <input type="checkbox" [(ngModel)]="isOpen" /> -->
+
+<div style="display: flex; justify-content: flex-end; margin: 20px">
+  <div class="account">
+    <div class="account__button">
+      <label>Select Account:</label>
+      <div class="account__text" (click)="isOpen = !isOpen">
+        <span class="account__text-name">EDEL INVESTMENTS LIMITED</span>
+        <span class="arrowright"></span>
+      </div>
+      <div class="tooltip">EDEL INVESTMENTS LIMITED</div>
+    </div>
+    <app-pop-up [(isOpen)]="isOpen"></app-pop-up>
+  </div>
+</div>

@@ -1,5 +1,13 @@
 import { FormControl } from '@angular/forms';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener,
+  ElementRef,
+} from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
@@ -20,7 +28,20 @@ export class GlobalSearchComponent implements OnInit {
   show = false;
   searchTerm: FormControl = new FormControl('');
 
-  constructor() {}
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  handleOutsideClick(event) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.hide();
+    } else {
+      if (this.searchTerm.value?.length >= this.minLength) {
+        this.open();
+        this.getsearchResults.emit(this.searchTerm.value);
+      }
+    }
+  }
+
+  constructor(private eRef: ElementRef) {}
 
   ngOnInit(): void {
     this.search();
@@ -43,16 +64,16 @@ export class GlobalSearchComponent implements OnInit {
         this.searchResults = [];
         if (res?.length >= this.minLength) {
           this.open();
-          this.getsearchResults.emit();
+          this.getsearchResults.emit(res);
         } else {
           this.hide();
         }
       });
   }
 
-  select(result){
-    this.hide()
-    this.clear()
-    this.goto.emit(result)
+  select(result) {
+    this.hide();
+    this.clear();
+    this.goto.emit(result);
   }
 }

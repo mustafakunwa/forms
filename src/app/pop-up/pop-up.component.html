@@ -1,0 +1,56 @@
+<div class="accountSection" [class.active]="isOpen">
+  <div class="accountSection__close-icon" (click)="close()"></div>
+  <aside class="accountSection__sidebar">
+    <h3>Select Account</h3>
+  </aside>
+
+  <div class="accountSection__content">
+    <div class="accountSection__search">
+      <div class="accountSection__input">
+        <app-global-search
+          debounceTime="100"
+          [searchResults]="searchResults"
+          [loading]="loading"
+          minLength="0"
+          (getsearchResults)="getsearchResults($event)"
+          placholder="Search account name"
+        >
+          <ng-container *ngIf="searchResults.length && !loading">
+            <div
+              *ngFor="let result of searchResults"
+              class="search__item"
+              (click)="routeTo(result)"
+            >
+              {{ result.name }}
+            </div>
+          </ng-container>
+        </app-global-search>
+      </div>
+      <div class="accountSection__label">Frequently visited :</div>
+    </div>
+    <div class="accountSection__list">
+      <div class="accountSection__tags">
+        <ul class="accountSection__items">
+          <li>EDEL INVESTMENTS LIMITED</li>
+        </ul>
+      </div>
+
+      <div class="accountSection__select">
+        <ul class="accountSection__select-list">
+          <li *ngFor="let item of [].constructor(30); let i = index">
+            <div class="accountSection__item">
+              <label for="" class="accountSection__item-radio">
+                <input type="radio" [checked]="i === 0" />
+                <span class="accountSection__item-icon"></span>
+                <span class="accountSection__item-text"
+                  >EDEL INVESTMENTS LIMITED</span
+                >
+                <div class="tooltip">EDEL INVESTMENTS LIMITED</div>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

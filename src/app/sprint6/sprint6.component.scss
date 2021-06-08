@@ -1,0 +1,67 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/util/tooltip";
+@import "../../assets/scss/iot/mixins/text";
+
+.account {
+    max-width: 320px;
+    display: inline-flex;
+    box-shadow: $shadow100;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: var(--spacing-s) var(--spacing-l);
+
+    &__button {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        position: relative;
+    }
+
+    label {
+        white-space: nowrap;
+        color: #555a5a;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.5;
+        display: inline-flex;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 4px;
+        cursor: pointer;
+        max-width: calc(100% - 88px);
+
+        &-name {
+            display: inline-block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-weight: 600;
+            font-size: 12px;
+            color: #0c0f12;
+            padding-right: var(--spacing-xs);
+        }
+
+        .arrowright {
+            border-color: #0c0f12;
+        }
+        &:hover + .tooltip {
+            visibility: visible;
+            opacity: 1;
+            transform: perspective(0) rotateX(0);
+
+            &:before {
+                top: -6px;
+                left: 50%;
+            }
+        }
+    }
+
+    .tooltip {
+        right: 0;
+        left: auto;
+        padding: var(--spacing-l);
+    }
+}
