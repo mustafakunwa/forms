@@ -32,7 +32,7 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
     private componentFactoryResolver: ComponentFactoryResolver,
     private cd: ChangeDetectorRef,
     private dialogRef: DialogRef,
-    private DialogConfig: DialogConfig
+    public DialogConfig: DialogConfig
   ) {}
 
   ngAfterViewInit(): void {

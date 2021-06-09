@@ -1,0 +1,64 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+.privacy {
+    &__close-icon {
+        z-index: 11;
+
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+        transform: rotate(0deg);
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+        margin: 46px 46px 0 auto;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            width: 2px;
+            position: absolute;
+            height: 15px;
+            background: #0c0f12;
+            top: 0;
+            right: 8px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__content {
+        padding: 74px 258px 150px 270px;
+        @media only screen and (min-width: $xxsmall) {
+            padding: 74px 10px 150px 10px;
+        }
+        @media only screen and (min-width: $small) {
+            padding: 74px 25px 150px 25px;
+        }
+        @media only screen and (min-width: $medium) {
+            padding: 74px 258px 150px 270px;
+        }
+    }
+    &__heading {
+        @include text(28px, 600, 32px, $primary-color1);
+
+        &-sub {
+            margin-top: 16px;
+            margin-bottom: 12px;
+            @include text(16px, 600, 24px, #000);
+        }
+    }
+
+    &__text {
+        @include text(12px, normal, 18px, #000);
+        margin-bottom: 15px;
+    }
+
+    &__button {
+        margin-top: 40px;
+    }
+}

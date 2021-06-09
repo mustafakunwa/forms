@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { DialogRef } from './../dialog-refs';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 enum headerType {
   default = 'default',
@@ -15,7 +16,10 @@ export class DialogHeaderComponent implements OnInit {
   @Input() type: headerType = headerType.default;
   @Input() message: string = '';
   @Input() iconPath: string = null;
-  constructor() {}
+  @Input() closable: boolean = false;
+  constructor(
+    private dialogRef: DialogRef,
+  ) {}
 
   ngOnInit(): void {}
 }

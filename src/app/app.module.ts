@@ -29,6 +29,7 @@ import { MultiSelectModule } from './multi-select/multi-select.module';
 import { PopUpModule } from './pop-up/pop-up.module';
 import { Sprint6Component } from './sprint6/sprint6.component';
 import { TabsModule } from './library/tabs/tabs.module';
+import {PrivacyPolicyModule} from './privacy-policy/privacy-policy.module';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { TabsModule } from './library/tabs/tabs.module';
     MultiSelectModule,
     PopUpModule,
     TabsModule,
+    PrivacyPolicyModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

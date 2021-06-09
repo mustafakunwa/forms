@@ -1,6 +1,7 @@
 <div class="dialog__heading">
-  <h1 class="dialog__heading-text" [ngClass]="type">{{ message }}</h1>
-  <span>
+  <h1 class="dialog__heading-text" [ngClass]="type" *ngIf="message">{{ message }}</h1>
+  <span *ngIf="iconPath">
     <img [src]="iconPath" />
   </span>
+  <div class="dialog__heading-close" *ngIf="closable" (click)="dialogRef.close()"></div>
 </div>

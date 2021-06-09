@@ -1,0 +1,77 @@
+<div class="privacy">
+  <div class="privacy__close-icon" (click)="dialogRef.close()"></div>
+  <app-dialog-body>
+    <div class="privacy__content">
+      <h2 class="privacy__heading">Airtel Business Privacy Policy</h2>
+      <p class="privacy__heading-sub">Term and Condition Page</p>
+      <p class="privacy__text">
+        By using our services, you are agreeing to these terms. Please read them
+        carefully. <br />
+        All messages sent from/sent to the Messaging Centre will be from/to the
+        short-code 12555 only. However, this number is subject to change in the
+        future, Airtel will communicate any such change with an advance 30 day
+        notice period. <br />
+        As per the M2M guidelines issued by the Department of Telecommunications
+        (DoT, Ministry of Communications) File 800-09/2010-VAS-III, all Telecom
+        Service Providers have been instructed to implement ‘restrictive
+        features’ for SIMs used for Machine-to-Machine communication services
+        (M2M). These guidelines mandate that SMS to/from any M2M/IoT device
+        would have to be restricted to a list of four numbers only<br />
+
+        To use the services of Messaging Centre, please whitelist the short-code
+        12555 in Rule Centre (Rule Centre >> SMS whitelisting). For sending SMS
+        from the platform to the M2M/IoT device, please whitelist the short code
+        12555 in the permitted list of incoming numbers/MSISDNs. For receiving
+        SMS sent from the M2M/IoT device on the platform, please whitelist the
+        short code 12555 in the permitted list of outgoing numbers/MSISDNs.
+        <br />
+
+        Messaging Centre allows you to control and interact with your devices
+        deployed in the field. You can only send/receive to the devices (M2M
+        MSISDNs) which are part of the billable account in which you have
+        subscribed to the ‘Messaging Centre’ service <br />
+
+        Using the capabilities of the Message Centre you can trigger an SMS to
+        your M2M/IoT devices from the Airtel IoT Hub. The ability to
+        send/receive SMS depends on the capabilities of your IoT device as well
+        as your IoT SIM plan details. <br />
+
+        Once subscribed to the Messaging Centre service, the plan opted for will
+        get auto renewed post expiry of the plan validity. Any unused SMS
+        corresponding to a particular plan period will lapse at the end of the
+        validity. <br />
+
+        The charges for Messaging Centre subscription will come as One Time
+        Charge in your bill with the tag ‘Messaging Centre Charges’. In case
+        your bill run is quarterly, the bill generated for the quarter would
+        have charges for Messaging Centre corresponding to each month. <br />
+
+        SMS balance of the plan subscribed is only deducted in the case of
+        successful delivery to the M2M number. <br />
+
+        Any and all information (including that pertaining to Customer or its
+        business) provided by Customer to Bharti Airtel or gathered by Airtel
+        independently of Customer may be disclosed by Airtel to any statutory/
+        regulatory/governmental authority or any other entity/individual whether
+        or not Airtel provides the Services to Customer. <br />
+
+        Bharti Airtel does not guarantee uninterrupted or fault-free working of
+        the network or the Services and shall not be liable to Customer or to
+        any user or other person for injuries or damages or death resulting from
+        operation of the network arising due to any events (including but not
+        limited to fire, explosion, war, riots, strikes, lockouts, picketing,
+        boycotts, acts of government authorities, Act of God and causes
+        originating in the facilities or operations of other telecom or allied
+        service providers).
+      </p>
+
+      <app-multi-checkbox
+        [(model)]="acceptTerms"
+        [form]="form"
+      ></app-multi-checkbox>
+      <div class="privacy__button">
+        <app-dynamic-button [model]="ageeButton"> I Agree </app-dynamic-button>
+      </div>
+    </div>
+  </app-dialog-body>
+</div>

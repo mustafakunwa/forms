@@ -32,9 +32,9 @@
             // display: inline-block;
             width: 100%;
             cursor: pointer;
-
             display: flex;
             align-items: center;
+            align-items: flex-start;
             &::before {
                 content: "";
                 display: inline-block;
@@ -45,6 +45,7 @@
                 border-color: $grey;
                 border-radius: 4px;
                 width: 18px;
+                min-width: 18px;
                 height: 18px;
                 vertical-align: top;
                 transition: border-color 0.2s, background-color 0.2s;
@@ -74,7 +75,7 @@
         input[type="checkbox"]:checked + span::before,
         input[type="checkbox"]:indeterminate + span::before {
             border-color: $functionary-color1;
-            background-color:$functionary-color1;
+            background-color: $functionary-color1;
             color: $black;
         }
 
