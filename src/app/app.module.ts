@@ -28,6 +28,7 @@ import { SelectModule } from './select/select.module';
 import { MultiSelectModule } from './multi-select/multi-select.module';
 import { PopUpModule } from './pop-up/pop-up.module';
 import { Sprint6Component } from './sprint6/sprint6.component';
+import { TabsModule } from './library/tabs/tabs.module';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { Sprint6Component } from './sprint6/sprint6.component';
     RadioModule,
     SelectModule,
     MultiSelectModule,
-    PopUpModule 
+    PopUpModule,
+    TabsModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

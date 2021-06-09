@@ -1,0 +1,59 @@
+@import "../../../assets/scss/iot/settings";
+@import "../../../assets/scss/iot/mixins/text";
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    background-color: $b800;
+
+    &::before,
+    &::after {
+        display: table;
+        content: " ";
+    }
+
+    &::after {
+        clear: both;
+    }
+
+    & > li {
+        position: relative;
+        display: block;
+        cursor: pointer;
+
+        & > a {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+
+            @include text(14px, normal, 19px, $black);
+        }
+    }
+}
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+
+    & > li {
+        float: left;
+        margin-bottom: -1px;
+
+        & > a {
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+        }
+
+        &.active > a,
+        &.active > a:hover,
+        &.active > a:focus {
+            cursor: default;
+            background-color: $white;
+            border-bottom-color: transparent;
+
+            @include text(14px, 600, 20px, $black);
+        }
+    }
+}

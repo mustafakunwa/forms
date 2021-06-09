@@ -13,3 +13,12 @@
     <app-pop-up [(isOpen)]="isOpen"></app-pop-up>
   </div>
 </div>
+
+<div>
+  <app-tabs>
+    <app-tab [tabTitle]="'Tab 1'"> Tab 1 content </app-tab>
+    <app-tab tabTitle="Tab 2">
+      <app-plan-subscription></app-plan-subscription>
+    </app-tab>
+  </app-tabs>
+</div>
