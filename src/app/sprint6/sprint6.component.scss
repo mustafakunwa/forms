@@ -24,6 +24,7 @@
         font-size: 12px;
         line-height: 1.5;
         display: inline-flex;
+        margin: 0;
     }
 
     &__text {
@@ -57,11 +58,39 @@
                 left: 50%;
             }
         }
+
+        &:hover .arrowright {
+            animation: arrow-grow 0.7s ease-in-out;
+        }
     }
 
     .tooltip {
         right: 0;
         left: auto;
         padding: var(--spacing-l);
+    }
+}
+
+@-webkit-keyframes arrow-grow {
+    0% {
+        transform:rotate(-45deg) translate(0,0) ;
+    }
+    50% {
+        transform: rotate(-45deg) translate(2px, 2px);
+    }
+    100% {
+        transform:rotate(-45deg)  translate(0,0);
+    }
+}
+
+@keyframes arrow-grow {
+    0% {
+        transform:rotate(-45deg) translate(0,0) ;
+    }
+    50% {
+        transform: rotate(-45deg) translate(2px, 2px);
+    }
+    100% {
+        transform:rotate(-45deg)  translate(0,0);
     }
 }
