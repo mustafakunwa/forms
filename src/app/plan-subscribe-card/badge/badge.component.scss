@@ -1,0 +1,8 @@
+@import '../../../assets/scss/iot/settings';
+@import '../../../assets/scss/iot/mixins/text';
+.badge {
+    padding: 2px 8px;
+    background-color: $secondary-color1;
+    border-radius: 4px;
+    @include text(12px, 600, 18px, $white);
+}

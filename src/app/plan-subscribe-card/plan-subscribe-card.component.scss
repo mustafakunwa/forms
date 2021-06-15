@@ -1,0 +1,105 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+.subscribeCard {
+    padding-bottom: 24px;
+    &__header {
+        border-bottom: 1px solid $b800;
+        display: flex;
+        align-items: center;
+
+        & > * {
+            margin-inline-start: 24px;
+        }
+    }
+
+    &__heading {
+        flex: 2;
+        @include text(14px, 600, 20px, $black);
+        span{
+            margin-right: 10px;
+        }
+    }
+
+    &__pricing {
+        flex: 1;
+        margin: 17px 0 9px 0;
+        @include text(24px, 600, 28px, $black);
+        span {
+            @include text(14px, 400, 20px, $b300);
+        }
+        p {
+            @include text(12px, 400, 18px, $b300);
+        }
+    }
+
+    &__content {
+        display: flex;
+        margin-top: 14px;
+    }
+
+    &__list {
+        padding-inline-start: 48px;
+        flex: 1;
+
+        list-style: disc;
+        li {
+            @include text(16px, 400, 24px, $b100);
+            margin-bottom: 12px;
+        }
+    }
+
+    &__balance {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        &-sms {
+            @include text(12px, 400, 18px, $b200);
+            p {
+                margin-top: 4px;
+                @include text(16px, 600, 24px, $b100);
+            }
+        }
+    }
+
+    &__payment {
+        flex: 1;
+
+        &-dates {
+            display: flex;
+        }
+
+        &-date {
+            @include text(12px, 400, 18px, $b200);
+            p {
+                margin-top: 4px;
+                margin-bottom: 0;
+                @include text(16px, 600, 24px, $b100);
+            }
+
+            &:not(:last-child) {
+                margin-inline-end: 53px;
+            }
+        }
+    }
+
+    &__left {
+        margin-top: 16px;
+        @include text(14px, 400, 20px, $b100);
+    }
+
+    &__unsubscribe {
+        margin-top: 18px;
+        @include text(14px, 400, 20px, $black);
+
+        ::ng-deep .link-btn {
+            padding: 0;
+            text-decoration: underline;
+        }
+    }
+
+    &__button {
+        margin-inline-start: 24px;
+    }
+}

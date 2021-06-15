@@ -1,0 +1,16 @@
+@import '../../assets/scss/iot/settings';
+
+.progress-bar {
+    background-color: $b800;
+    width: 80%;
+    border-radius: 100px;
+    height: 6px;
+
+    span {
+        background-color: $functionary-color1;
+        color: white;
+        padding: 1%;
+        text-align: right;
+        border-radius: 100px;
+    }
+}

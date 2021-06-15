@@ -32,6 +32,7 @@ import { TabsModule } from './library/tabs/tabs.module';
 import {PrivacyPolicyModule} from './privacy-policy/privacy-policy.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ChangePasswordModule} from './change-password/change-password.module';
+import {PlanSubscribeCardModule} from './plan-subscribe-card/plan-subscribe-card.module';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import {ChangePasswordModule} from './change-password/change-password.module';
     TabsModule,
     PrivacyPolicyModule,
     NgbModule,
-    ChangePasswordModule
+    ChangePasswordModule,
+    PlanSubscribeCardModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

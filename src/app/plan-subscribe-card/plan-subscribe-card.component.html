@@ -1,0 +1,60 @@
+<app-card>
+  <div class="subscribeCard">
+    <div class="subscribeCard__header">
+      <h1 class="subscribeCard__heading">
+        <span>Message Center</span>
+        <app-badge value="XXL"></app-badge>
+      </h1>
+
+      <div class="subscribeCard__pricing">
+        ₹ 499<span> /mon</span>
+        <p>Plus taxes</p>
+      </div>
+    </div>
+    <div class="subscribeCard__content">
+      <ul class="subscribeCard__list">
+        <li>Request Quota: 1,00,00,000</li>
+        <li>Validity : 30 Days</li>
+        <li>Status: Active</li>
+      </ul>
+      <div class="subscribeCard__balance">
+        <div class="subscribeCard__balance-sms">
+          Current SMS Balance
+          <p>176</p>
+        </div>
+        <div class="subscribeCard__balance-sms">
+          Rollover SMS Balance
+          <p>17</p>
+        </div>
+      </div>
+
+      <div class="subscribeCard__payment">
+        <div class="subscribeCard__payment-dates">
+          <div class="subscribeCard__payment-date">
+            Plan Start Date
+            <p>13 Mar 2021</p>
+          </div>
+          <div class="subscribeCard__payment-date">
+            Next Payment on
+            <p>12 Apr 2021</p>
+          </div>
+        </div>
+        <div class="subscribeCard__left">
+          16 days left
+          <app-progress-bar value="40"></app-progress-bar>
+        </div>
+        <div class="subscribeCard__unsubscribe">
+          Unsubscribe Message Centre Service.
+          <app-dynamic-button [model]="unsubscribeButton">
+            Unsubscribe
+          </app-dynamic-button>
+        </div>
+      </div>
+    </div>
+    <div class="subscribeCard__button">
+      <app-dynamic-button [model]="upgradeButton">
+        Upgrade Plan
+      </app-dynamic-button>
+    </div>
+  </div>
+</app-card>
