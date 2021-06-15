@@ -31,6 +31,7 @@ import { Sprint6Component } from './sprint6/sprint6.component';
 import { TabsModule } from './library/tabs/tabs.module';
 import {PrivacyPolicyModule} from './privacy-policy/privacy-policy.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ChangePasswordModule} from './change-password/change-password.module';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PopUpModule,
     TabsModule,
     PrivacyPolicyModule,
-    NgbModule
+    NgbModule,
+    ChangePasswordModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

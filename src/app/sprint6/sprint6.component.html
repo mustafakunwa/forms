@@ -1,5 +1,3 @@
-<!-- <input type="checkbox" [(ngModel)]="isOpen" /> -->
-
 <div style="display: flex; justify-content: flex-end; margin: 20px">
   <div class="account">
     <div class="account__button">
@@ -10,7 +8,7 @@
       </div>
       <div class="tooltip">EDEL INVESTMENTS LIMITED</div>
     </div>
-    <app-pop-up [(isOpen)]="isOpen"></app-pop-up>
+    <!-- <app-pop-up [(isOpen)]="isOpen"></app-pop-up> -->
   </div>
 </div>
 
@@ -24,6 +22,12 @@
 </div>
 
 <div>
-  <app-dynamic-button [model]="primaryButton">Open Privacy policy</app-dynamic-button
-    >
+  <app-dynamic-button [model]="primaryButton"
+    >Open Privacy policy</app-dynamic-button
+  >
+  <app-dynamic-button [model]="passwordButton"
+    >Change Password</app-dynamic-button
+  >
 </div>
+
+<app-change-password [(isOpen)]="isChangePasswordOpen"></app-change-password>
