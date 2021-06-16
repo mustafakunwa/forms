@@ -33,7 +33,7 @@ export class GlobalSearchComponent implements OnInit {
   @HostListener('document:touchstart', ['$event'])
   handleOutsideClick(event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
-      if (this.closeOnOutsideClick) this.hide();
+      if (this.closeOutsideClick) this.hide();
     } else {
       if (this.searchTerm.value?.length >= this.minLength) {
         this.open();
