@@ -24,7 +24,7 @@ export class GlobalSearchComponent implements OnInit {
   @Input() terms: string[] = [];
   @Output() getsearchResults: EventEmitter<any> = new EventEmitter<any>();
   @Output() goto: EventEmitter<any> = new EventEmitter<any>();
-  @Input() closeOnOutsideClick: boolean = true;
+  @Input() closeOutsideClick: boolean = true;
 
   show = false;
   searchTerm: FormControl = new FormControl('');
