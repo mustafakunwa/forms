@@ -24,6 +24,7 @@ export class GlobalSearchComponent implements OnInit {
   @Input() terms: string[] = [];
   @Output() getsearchResults: EventEmitter<any> = new EventEmitter<any>();
   @Output() goto: EventEmitter<any> = new EventEmitter<any>();
+  @Input() closeOnOutsideClick: boolean = true;
 
   show = false;
   searchTerm: FormControl = new FormControl('');
@@ -32,7 +33,7 @@ export class GlobalSearchComponent implements OnInit {
   @HostListener('document:touchstart', ['$event'])
   handleOutsideClick(event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
-      this.hide();
+      if (this.closeOnOutsideClick) this.hide();
     } else {
       if (this.searchTerm.value?.length >= this.minLength) {
         this.open();

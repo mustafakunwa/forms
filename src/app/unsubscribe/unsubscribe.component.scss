@@ -1,0 +1,16 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+.unsubscribe {
+    padding: 30px 0 24px 14px;
+
+    &__heading {
+        @include text(14px, 600, 26px, $black);
+        margin-bottom: 50px;
+    }
+
+    &__select {
+        max-width: 380px;
+        margin-bottom: 50px;
+    }
+}

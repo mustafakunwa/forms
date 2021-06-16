@@ -1,0 +1,11 @@
+<app-card [styles]="{ height: 'auto', width: '80%', margin: 'auto' }">
+  <div class="unsubscribe">
+    <h3 class="unsubscribe__heading">Please enter the reason to unsubscribe</h3>
+    <div class="unsubscribe__select">
+      <app-select [(model)]="selectReason" [form]="form"></app-select>
+    </div>
+    <div class="unsubscribe__button">
+      <app-dynamic-button [model]="submitButton"> submit </app-dynamic-button>
+    </div>
+  </div>
+</app-card>

@@ -1,0 +1,16 @@
+<app-card [styles]="{ height: 'auto', width: '80%', margin: 'auto' }">
+  <div class="unsuscribeSuccess">
+    <span class="tick-backgound"></span>
+    <h2 class="unsuscribeSuccess__heading">Unsubscribe request raised</h2>
+    <p class="unsuscribeSuccess__text">
+      Your request to unsubscribe from service has been received. We will reach
+      out to you for confirmation within xx hours.
+      <br />
+      <br>
+      If this was a mistake, send us an email at xxxxxxxx
+    </p>
+    <div class="unsuscribeSuccess__button">
+        <app-dynamic-button [model]="homeButton"> submit </app-dynamic-button>
+      </div>
+  </div>
+</app-card>

@@ -29,11 +29,12 @@ import { MultiSelectModule } from './multi-select/multi-select.module';
 import { PopUpModule } from './pop-up/pop-up.module';
 import { Sprint6Component } from './sprint6/sprint6.component';
 import { TabsModule } from './library/tabs/tabs.module';
-import {PrivacyPolicyModule} from './privacy-policy/privacy-policy.module';
+import { PrivacyPolicyModule } from './privacy-policy/privacy-policy.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {ChangePasswordModule} from './change-password/change-password.module';
-import {PlanSubscribeCardModule} from './plan-subscribe-card/plan-subscribe-card.module';
-
+import { ChangePasswordModule } from './change-password/change-password.module';
+import { PlanSubscribeCardModule } from './plan-subscribe-card/plan-subscribe-card.module';
+import { UnsubscribeModule } from './unsubscribe/unsubscribe.module';
+import { UnsubscribeSuccessModule } from './unsubscribe-success/unsubscribe-success.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,9 @@ import {PlanSubscribeCardModule} from './plan-subscribe-card/plan-subscribe-card
     PrivacyPolicyModule,
     NgbModule,
     ChangePasswordModule,
-    PlanSubscribeCardModule
+    PlanSubscribeCardModule,
+    UnsubscribeModule ,
+    UnsubscribeSuccessModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

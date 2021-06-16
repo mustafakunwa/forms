@@ -1,0 +1,49 @@
+@import "../../assets/scss/iot/settings";
+@import "../../assets/scss/iot/mixins/text";
+
+.unsuscribeSuccess {
+    padding: 60px 0 40px 36px;
+    .tick-backgound {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+        background: $validate-success;
+        border-radius: 50%;
+
+        &::before {
+            position: absolute;
+            left: 6px;
+            top: 44%;
+            height: 10px;
+            width: 2px;
+            background-color: $white;
+            content: "";
+            transform: translateX(10px) rotate(-45deg);
+            transform-origin: left bottom;
+        }
+        &::after {
+            position: absolute;
+            left: 6px;
+            top: 24px;
+            height: 2px;
+            width: 20px;
+            background-color: $white;
+            content: "";
+            transform: translateX(10px) rotate(-45deg);
+            transform-origin: left bottom;
+        }
+    }
+
+    &__heading{
+        margin-top: 8px;
+        max-width: 220px;
+        @include text(32px, 700, 44px, $black);
+    }
+    &__text{
+        max-width: 540px;
+        @include text(16px, 400, 24px, $black);
+        margin: 24px 0;
+    }
+}
