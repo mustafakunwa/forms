@@ -35,6 +35,8 @@ import { ChangePasswordModule } from './change-password/change-password.module';
 import { PlanSubscribeCardModule } from './plan-subscribe-card/plan-subscribe-card.module';
 import { UnsubscribeModule } from './unsubscribe/unsubscribe.module';
 import { UnsubscribeSuccessModule } from './unsubscribe-success/unsubscribe-success.module';
+import { SearchModule } from './search/search.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,8 +74,9 @@ import { UnsubscribeSuccessModule } from './unsubscribe-success/unsubscribe-succ
     NgbModule,
     ChangePasswordModule,
     PlanSubscribeCardModule,
-    UnsubscribeModule ,
-    UnsubscribeSuccessModule
+    UnsubscribeModule,
+    UnsubscribeSuccessModule,
+    SearchModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponentComponent],

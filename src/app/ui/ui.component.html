@@ -2,7 +2,7 @@
   <app-sidebar></app-sidebar>
 
   <div style="display: flex; flex-direction: column; width: 100%">
-    <div style="background-color: black; padding: 10px 50px;">
+    <div style="background-color: black; padding: 10px 50px">
       <app-global-search
         debounceTime="300"
         [searchResults]="searchResults"
@@ -30,7 +30,12 @@
       </app-global-search>
     </div>
 
-    <input type="checkbox" (change)="valueChange($event)">
+    <br />
+    <div style="background-color: white; padding: 10px 50px">
+      <app-search></app-search>
+    </div>
+    <br />
+    <input type="checkbox" (change)="valueChange($event)" />
 
     <app-activity-card [show]="card">
       <app-activity-header color="black">

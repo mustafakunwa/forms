@@ -1,0 +1,50 @@
+<div class="search" [class.search__focused]="isFocused" [class.search__loading]="loading || show">
+  <img src="../../assets/images/search.svg" class="search__img" />
+  <input
+    class="search__input"
+    [formControl]="searchTerm"
+    [placeholder]="placholder"
+    type="text"
+  />
+  <span class="search__cancel" (click)="cancel()" *ngIf="searchTerm.value"></span>
+
+  <div *ngIf="show" class="search__result">
+    <div class="slider" *ngIf="loading">
+      <div class="line"></div>
+      <div class="subline inc"></div>
+      <div class="subline dec"></div>
+    </div>
+
+    <div class="search__result-items" *ngIf="searchResults.length > 0">
+      <div class="search__result-suggestion">Search Suggestion</div>
+
+      <div class="search__result-item" *ngFor="let item of searchResults" (click)="onSelect(item)">
+        <div class="search__item">
+          <div class="search__item-name">Basket Name</div>
+          <div class="search__item-value basket">Mumbai Region</div>
+        </div>
+        <div class="search__item">
+          <div class="search__item-name">SIM No.</div>
+          <div class="search__item-value">8991490890001805213</div>
+        </div>
+        <div class="search__item">
+          <div class="search__item-name">MSISDN</div>
+          <div class="search__item-value">5754000229319</div>
+        </div>
+        <div class="search__item">
+          <div class="search__item-name">IMSI</div>
+          <div class="search__item-value">404490891805213</div>
+        </div>
+        <div class="search__item">
+          <div class="search__item-name">Status</div>
+          <div class="search__item-value">Available</div>
+        </div>
+        <i class="arrow right"></i>
+      </div>
+    </div>
+
+    <div class="search__result-noResult" *ngIf="searchResults.length === 0 && !loading">
+      No Result
+    </div>
+  </div>
+</div>
