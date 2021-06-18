@@ -1,4 +1,4 @@
-<app-card [styles]="{ height: 'auto' }">
+<app-card [styles]="{ height: 'auto', width: '80%', margin: '10px auto' }">
   <div class="subscription">
     <h2 class="subscription__heading">Plan Subscription Details</h2>
     <p class="subscription__description">
@@ -19,10 +19,26 @@
       </div>
     </div>
 
-    <div class="subscription__plans">
-      <app-card *ngFor="let i of [].constructor(6)">
-        <app-plan-card (selected)="buy($event)" [plan]="plan"></app-plan-card>
-      </app-card>
-    </div>
+    <ngb-carousel
+      [showNavigationArrows]="showNavigationArrows"
+      [showNavigationIndicators]="showNavigationIndicators"
+      class="subscription__carousel"
+    >
+      <ng-template
+        ngbSlide
+        *ngFor="let i of [].constructor(getSlideCount()); let index = index"
+      >
+        <div class="subscription__plans">
+          <app-card
+            *ngFor="let i of [].constructor(36).slice(index * items,items*(index+1))"
+          >
+            <app-plan-card
+              (selected)="buy($event)"
+              [plan]="plan"
+            ></app-plan-card>
+          </app-card>
+        </div>
+      </ng-template>
+    </ngb-carousel>
   </div>
 </app-card>

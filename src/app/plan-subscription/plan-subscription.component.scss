@@ -3,6 +3,7 @@
 
 .subscription {
     padding: 24px;
+    padding-bottom: 70px;
     &__heading {
         @include text(24px, 600, 28px, $black);
     }
@@ -25,14 +26,54 @@
         }
     }
 
-    &__plans {
-        margin-top: 42px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 165px);
-        grid-gap: 14px;
+  
+        
+    
 
+    &__plans {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        & > * {
+            margin: 0 7px;
+            min-width: 165px;
+        }
         ::ng-deep .section-box {
             margin: 0;
+        }
+    }
+
+    ::ng-deep {
+        .carousel-indicators {
+            bottom: -60px;
+            li {
+                background-color: $black;
+                width: 24px;
+                height: 4px;
+                border-radius: 4px;
+            }
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background: black;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            opacity: 1;
+            top: 40%;
+            bottom: auto;
+        }
+        .carousel-control-prev {
+            left: -15px;
+        }
+        .carousel-control-next {
+            right: -15px;
+        }
+        .carousel-item:last-child{
+            .subscription__plans{
+                justify-content: flex-start;
+            }
         }
     }
 }
