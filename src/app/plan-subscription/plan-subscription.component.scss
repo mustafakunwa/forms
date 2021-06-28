@@ -4,6 +4,7 @@
 .subscription {
     padding: 24px;
     padding-bottom: 70px;
+    overflow: hidden;
     &__heading {
         @include text(24px, 600, 28px, $black);
     }
@@ -26,10 +27,6 @@
         }
     }
 
-  
-        
-    
-
     &__plans {
         display: flex;
         justify-content: center;
@@ -42,38 +39,114 @@
             margin: 0;
         }
     }
+}
 
-    ::ng-deep {
-        .carousel-indicators {
-            bottom: -60px;
-            li {
-                background-color: $black;
-                width: 24px;
-                height: 4px;
-                border-radius: 4px;
-            }
-        }
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
 
-        .carousel-control-prev,
-        .carousel-control-next {
-            background: black;
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            opacity: 1;
-            top: 40%;
-            bottom: auto;
-        }
-        .carousel-control-prev {
-            left: -15px;
-        }
-        .carousel-control-next {
-            right: -15px;
-        }
-        .carousel-item:last-child{
-            .subscription__plans{
-                justify-content: flex-start;
-            }
-        }
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 8px 14px;
+    margin-top: -22px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background: black;
+    color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.next {
+    right: 0;
+}
+
+.dot {
+    cursor: pointer;
+    width: 24px;
+    height: 4px;
+    border-radius: 4px;
+    margin: 0 2px;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.slideIn {
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: .7s;
+    animation-name: slideIn;
+    animation-duration: .7s;
+}
+
+@-webkit-keyframes slideIn {
+    from {
+        opacity: 0.4;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }
+
+@keyframes slideIn {
+    from {
+        opacity: 0.4;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+/* Fading animation */
+.slideOut {
+    -webkit-animation-name: slideOut;
+    -webkit-animation-duration: .7s;
+    animation-name: slideOut;
+    animation-duration: .7s;
+}
+
+@-webkit-keyframes slideOut {
+    from {
+        opacity: 0.4;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 0.4;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+

@@ -1,3 +1,5 @@
+
+
 <app-card [styles]="{ height: 'auto', width: '80%', margin: '10px auto' }">
   <div class="subscription">
     <h2 class="subscription__heading">Plan Subscription Details</h2>
@@ -19,18 +21,13 @@
       </div>
     </div>
 
-    <ngb-carousel
-      [showNavigationArrows]="showNavigationArrows"
-      [showNavigationIndicators]="showNavigationIndicators"
-      class="subscription__carousel"
-    >
-      <ng-template
-        ngbSlide
-        *ngFor="let i of [].constructor(getSlideCount()); let index = index"
-      >
+    <div class="slideshow-container">
+    
+
+      <div class="mySlides" [ngClass]="animation" *ngFor="let i of [].constructor(getSlideCount()); let index = index">
         <div class="subscription__plans">
           <app-card
-            *ngFor="let i of [].constructor(36).slice(index * items,items*(index+1))"
+          *ngFor="let i of [].constructor(36).slice(index * items,items*(index+1))"
           >
             <app-plan-card
               (selected)="buy($event)"
@@ -38,7 +35,15 @@
             ></app-plan-card>
           </app-card>
         </div>
-      </ng-template>
-    </ngb-carousel>
+      </div>
+
+      <span class="prev" (click)="plusSlides(-1)">&#10094;</span>
+      <span class="next" (click)="plusSlides(1)">&#10095;</span>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" (click)="currentSlide(index+1)" *ngFor="let i of [].constructor(getSlideCount()); let index = index"></span>
+    </div>
   </div>
 </app-card>
